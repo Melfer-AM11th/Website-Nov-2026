@@ -1,0 +1,11 @@
+AMElleventh website v21 (serif Pi cursor) - upload to amelleventh.com
+
+1. Upload EVERY file in this folder to the site's root (same level, no subfolder):
+   index.html, favicon.svg, favicon-32.png, apple-touch-icon.png, og-image.png, robots.txt, sitemap.xml
+   Cloudflare Pages: Create project > Direct upload > drag this folder.
+2. Point amelleventh.com (and www) to the site and switch on HTTPS.
+3. Activate the enquiry form ONCE: submit a test enquiry on the live site, then open the
+   activation email FormSubmit sends to engage@amelleventh.com and click Confirm.
+   Until you confirm, enquiries are not delivered to you.
+4. Test on your phone: tap the WhatsApp button - it opens WhatsApp with a ready message to +971 52 718 8093.
+5. Check the link preview: paste https://amelleventh.com in a WhatsApp chat to yourself.
