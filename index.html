@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,7 @@
 <meta name="description" content="Customer operations and back-office teams for UAE and GCC businesses, delivered in the Philippines and governed from Dubai. Pilots from 30 seats.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -66,13 +66,16 @@ svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stro
 .btn-outline:hover{box-shadow:inset 0 0 0 1px var(--imperial);color:var(--imperial)}
 .btn-white{background:#fff;color:var(--imperial)}
 .btn-white:hover{transform:translateY(-1px)}
+.btn-wa{background:#128C4A;color:#fff;box-shadow:0 10px 24px -12px rgba(18,140,74,.7)}
+.btn-wa:hover{transform:translateY(-1px);background:#0F7A41}
+.btn[disabled]{opacity:.65;cursor:progress;transform:none}
 
 /* header */
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
 header.scrolled{border-color:var(--line)}
 .bar{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{display:flex;align-items:center;gap:.6rem}
-.logo svg{width:24px;height:33px}
+.logo{display:flex;align-items:center;gap:.65rem}
+.logo svg{width:30px;height:42px}
 .logo-word{font:600 1.6rem/1 'Cormorant Garamond',Georgia,serif;letter-spacing:.02em;color:var(--navy)}
 .logo-word b{font-weight:600;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .nav{display:flex;align-items:center;gap:28px;list-style:none}
@@ -81,6 +84,8 @@ header.scrolled{border-color:var(--line)}
 .bar-right{display:flex;align-items:center;gap:10px}
 .icon-btn{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;color:var(--imperial);background:transparent;border:0;cursor:pointer}
 .icon-btn:hover{background:var(--tint)}
+.lang-btn{height:40px;padding:0 14px;border-radius:999px;border:1px solid #C7D5EA;background:#fff;color:var(--imperial);font:600 .9rem var(--font);cursor:pointer;transition:background .2s,border-color .2s}
+.lang-btn:hover{background:var(--tint);border-color:var(--imperial)}
 .menu-btn{display:none}
 .mobile-nav{display:none}
 
@@ -138,11 +143,11 @@ button.card:focus-visible{outline:3px solid var(--royal);outline-offset:3px}
 .roles span{font-size:.8rem;padding:.28rem .65rem;border-radius:999px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.85)}
 
 /* timeline */
-.timeline{margin-top:44px;position:relative;padding-left:30px;max-width:780px}
-.timeline::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--imperial),#C7D5EA)}
+.timeline{margin-top:44px;position:relative;padding-inline-start:30px;max-width:780px}
+.timeline::before{content:'';position:absolute;inset-inline-start:6px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--imperial),#C7D5EA)}
 .tl{position:relative;padding-bottom:30px}
 .tl:last-child{padding-bottom:0}
-.tl::before{content:'';position:absolute;left:-30px;top:6px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--imperial)}
+.tl::before{content:'';position:absolute;inset-inline-start:-30px;top:6px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--imperial)}
 .tl.now::before{background:var(--gold);border-color:var(--gold);box-shadow:0 0 0 5px rgba(212,168,67,.22)}
 .tl .when{font-size:.82rem;font-weight:600;color:var(--imperial)}
 .tl.now .when{color:var(--gold)}
@@ -164,12 +169,11 @@ button.card:focus-visible{outline:3px solid var(--royal);outline-offset:3px}
 
 /* explore */
 a.card{display:block;position:relative}
-a.card .arrow{position:absolute;top:24px;right:24px;color:var(--muted)}
+a.card .arrow{position:absolute;top:24px;inset-inline-end:24px;color:var(--muted)}
 a.card:hover .arrow{color:var(--imperial)}
 
 /* CTA band */
 .cta-band{background:var(--grad);border-radius:24px;padding:64px 40px;text-align:center;color:#fff;position:relative;overflow:hidden}
-.cta-band::after{content:'';position:absolute;right:-40px;bottom:-70px;width:260px;height:360px;opacity:.08;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 108 150'%3E%3Cg fill='%23fff'%3E%3Crect width='108' height='6' rx='1.5'/%3E%3Crect x='10' y='18' width='32' height='7'/%3E%3Cpath d='M16 25h20l-2 83H18z'/%3E%3Crect x='6' y='113' width='40' height='8'/%3E%3Crect x='64' y='18' width='32' height='7'/%3E%3Cpath d='M70 25h20l-2 83H72z'/%3E%3Crect x='60' y='113' width='40' height='8'/%3E%3Crect y='126' width='108' height='5'/%3E%3C/g%3E%3C/svg%3E") no-repeat center/contain}
 .cta-band h2{color:#fff}
 .cta-band p{color:rgba(255,255,255,.82);max-width:56ch;margin:12px auto 28px}
 .cta-contacts{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 28px;margin-top:28px;font-size:.95rem;color:rgba(255,255,255,.9)}
@@ -197,8 +201,8 @@ dialog::backdrop{background:rgba(15,27,45,.5);backdrop-filter:blur(4px)}
 dialog[open]{animation:pop .25s ease-out}
 @keyframes pop{from{opacity:0;transform:translateY(14px)}}
 .dlg{padding:34px;overflow:auto;max-height:88vh;position:relative}
-.dlg-x{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:10px;border:0;background:var(--soft);cursor:pointer;font-size:1.3rem;color:var(--ink)}
-.dlg h3{font-size:1.7rem;font-weight:700;padding-right:44px}
+.dlg-x{position:absolute;top:14px;inset-inline-end:14px;width:40px;height:40px;border-radius:10px;border:0;background:var(--soft);cursor:pointer;font-size:1.3rem;color:var(--ink)}
+.dlg h3{font-size:1.7rem;font-weight:700;padding-inline-end:44px}
 .dlg > p{margin-top:8px}
 .dlg h4{font-size:.95rem;font-weight:600;margin:24px 0 10px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
@@ -221,9 +225,9 @@ dialog[open]{animation:pop .25s ease-out}
 .hc-city{display:flex;gap:.6rem;align-items:center;color:var(--imperial)}
 .hc-city b{display:block;color:var(--ink);font-size:1.05rem}
 .hc-city span{display:block;font-size:.85rem;color:var(--muted)}
-.hc-time{font-size:1.9rem;font-weight:700;color:var(--ink);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.hc-list{list-style:none;margin:12px 0 4px 30px;display:grid;gap:4px;font-size:.88rem}
-.hc-list li::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--gold);margin-right:.55rem;vertical-align:middle}
+.hc-time{font-size:1.9rem;font-weight:700;color:var(--ink);letter-spacing:-.03em;font-variant-numeric:tabular-nums;direction:ltr}
+.hc-list{list-style:none;margin:12px 0 4px;margin-inline-start:30px;display:grid;gap:4px;font-size:.88rem}
+.hc-list li::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--gold);margin-inline-end:.55rem;vertical-align:middle}
 .hc-gap{margin:16px 0;padding:8px 0;border-block:1px dashed var(--line);text-align:center;font-size:.8rem;font-weight:600;color:#8A6A1E}
 .c2{grid-template-columns:1fr 1fr}
 .card.offer h3{font-size:1.3rem}
@@ -252,9 +256,9 @@ details[open] > summary .plus{transform:rotate(45deg)}
 .kpis small{font-size:.88rem;color:var(--ink);font-weight:500}
 .kpis b{font-size:.75rem;color:var(--muted);font-weight:500}
 .kpis i{grid-column:1/-1;height:8px;border-radius:99px;background:var(--tint);position:relative;overflow:hidden}
-.kpis i::after{content:'';position:absolute;inset:0 auto 0 0;width:var(--w);background:var(--grad);border-radius:99px}
+.kpis i::after{content:'';position:absolute;inset-block:0;inset-inline-start:0;width:var(--w);background:var(--grad);border-radius:99px}
 .report-list{list-style:none;margin-top:20px;padding-top:16px;border-top:1px solid var(--line);display:grid;gap:8px;font-size:.92rem}
-.report-list li::before{content:'✓';color:var(--imperial);font-weight:700;margin-right:.5rem}
+.report-list li::before{content:'✓';color:var(--imperial);font-weight:700;margin-inline-end:.5rem}
 .fine{font-size:.82rem;color:var(--muted);margin-top:14px}
 .cases{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
 .case{background:#fff;border:1px solid var(--line);border-radius:var(--r)}
@@ -269,7 +273,7 @@ details[open] > summary .plus{transform:rotate(45deg)}
 #story .timeline{margin-top:6px}
 .enquiry{display:grid;grid-template-columns:.85fr 1.15fr;gap:0;border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:0 40px 80px -50px rgba(15,27,45,.5)}
 .enq-copy{background:var(--grad);color:#fff;padding:48px 40px;position:relative;overflow:hidden}
-.enq-copy::after{content:'';position:absolute;right:-50px;bottom:-80px;width:240px;height:330px;opacity:.08;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 108 150'%3E%3Cg fill='%23fff'%3E%3Crect width='108' height='6' rx='1.5'/%3E%3Crect x='10' y='18' width='32' height='7'/%3E%3Cpath d='M16 25h20l-2 83H18z'/%3E%3Crect x='6' y='113' width='40' height='8'/%3E%3Crect x='64' y='18' width='32' height='7'/%3E%3Cpath d='M70 25h20l-2 83H72z'/%3E%3Crect x='60' y='113' width='40' height='8'/%3E%3Crect y='126' width='108' height='5'/%3E%3C/g%3E%3C/svg%3E") no-repeat center/contain}
+.enq-copy::after{content:'';position:absolute;right:-50px;bottom:-80px;width:240px;height:330px;opacity:.08;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 108 150'%3E%3Cg fill='%23fff'%3E%3Crect width='108' height='6' rx='1.5'/%3E%3Crect x='10' y='18' width='32' height='7'/%3E%3Cpath d='M16 25h20l-2 83H18z'/%3E%3Crect x='12' y='108' width='28' height='5'/%3E%3Crect x='6' y='113' width='40' height='8'/%3E%3Crect x='2' y='121' width='48' height='5'/%3E%3Crect x='64' y='18' width='32' height='7'/%3E%3Cpath d='M70 25h20l-2 83H72z'/%3E%3Crect x='66' y='108' width='28' height='5'/%3E%3Crect x='60' y='113' width='40' height='8'/%3E%3Crect x='56' y='121' width='48' height='5'/%3E%3Crect y='126' width='108' height='5' rx='1.5'/%3E%3C/g%3E%3C/svg%3E") no-repeat center/contain}
 .enq-copy h2{color:#fff}
 .enq-copy p{color:rgba(255,255,255,.82);margin-top:10px}
 .enq-contacts{display:grid;gap:10px;margin-top:30px;position:relative;z-index:1}
@@ -284,12 +288,15 @@ details[open] > summary .plus{transform:rotate(45deg)}
 .enq-form textarea{resize:vertical}
 .enq-form input:focus,.enq-form select:focus,.enq-form textarea:focus{outline:none;border-color:var(--royal);box-shadow:0 0 0 3px rgba(45,91,168,.15)}
 .enq-form .invalid{border-color:#C0392B}
-.enq-form .btn{justify-self:start;margin-top:4px}
-.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.send-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.send-note{font-size:.82rem;color:var(--muted)}
+.enq-form{position:relative}
+.hp{position:absolute;top:0;left:0;width:1px;height:1px;opacity:0;overflow:hidden;clip-path:inset(50%);pointer-events:none}
 .form-status{font-size:.92rem;min-height:1.4em}
 .form-status.ok{color:#1F7A4A;font-weight:600}
+.form-status.warn{color:#8A5A00;font-weight:500}
 .form-status.err{color:#B42318}
-.form-status a{text-decoration:underline}
+.form-status a{text-decoration:underline;font-weight:600}
 footer{margin-top:0}
 @media(max-width:1000px){
   .hero-grid,.split,.enquiry{grid-template-columns:1fr}
@@ -300,6 +307,7 @@ footer{margin-top:0}
   .row2{grid-template-columns:1fr}
   .enq-copy,.enq-form{padding:30px 22px}
   .hero{padding:36px 0 64px}
+  .send-row .btn{width:100%;justify-content:center}
 }
 
 /* cursor: serif Pi (v21) */
@@ -331,6 +339,13 @@ html.am-cursor-on select{cursor:pointer!important}
   .foot-brand{grid-column:1/-1}
 }
 @media(max-width:600px){
+  .bar{gap:10px}
+  .bar-right{gap:2px}
+  .logo{gap:.45rem}
+  .logo svg{width:24px;height:34px}
+  .logo-word{font-size:1.3rem}
+  .lang-btn{height:36px;padding:0 11px;font-size:.82rem}
+  .icon-btn{width:40px;height:40px}
   section{padding:72px 0}
   .wrap{width:min(1180px,100% - 32px)}
   .trust-grid,.c3,.c4,.steps{grid-template-columns:1fr}
@@ -339,7 +354,24 @@ html.am-cursor-on select{cursor:pointer!important}
   .dlg{padding:26px 22px}
   .quote{padding:24px}
 }
+@media(max-width:380px){
+  .logo-word{font-size:1.15rem}
+  .lang-btn{padding:0 9px}
+}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}#am-trail{display:none}}
+
+/* v22: Arabic / right-to-left */
+html[dir=rtl]{--font:'Noto Sans Arabic','Inter',system-ui,-apple-system,Segoe UI,sans-serif}
+html[dir=rtl] *{letter-spacing:0!important}
+html[dir=rtl] .logo-word{letter-spacing:.02em!important}
+html[dir=rtl] .logo-word b{letter-spacing:.02em!important}
+html[dir=rtl] body{line-height:1.85}
+html[dir=rtl] h1,html[dir=rtl] h2,html[dir=rtl] h3,html[dir=rtl] h4{line-height:1.35}
+html[dir=rtl] .hero h1{line-height:1.3;max-width:20ch}
+html[dir=rtl] .btn svg.i,html[dir=rtl] .more svg.i{transform:scaleX(-1)}
+html[dir=rtl] .kicker{font-size:.9rem}
+html[dir=rtl] .enq-copy::after{right:auto;left:-50px}
+html[dir=rtl] .quote blockquote{line-height:1.6}
 </style>
 </head>
 <body>
@@ -350,6 +382,29 @@ html.am-cursor-on select{cursor:pointer!important}
 
 <!-- icon sprite -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- AM11 Pillar mark (Brand Guidelines v4, Mark C), light-field variant for the white site chrome -->
+    <linearGradient id="lgL" x1="27" y1="0" x2="27" y2="150" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#C9A030"/><stop offset=".35" stop-color="#9A7418"/><stop offset=".7" stop-color="#7A5A14"/><stop offset="1" stop-color="#5A3E0A"/></linearGradient>
+    <linearGradient id="lgR" x1="81" y1="0" x2="81" y2="150" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#C9A030"/><stop offset=".35" stop-color="#9A7418"/><stop offset=".7" stop-color="#7A5A14"/><stop offset="1" stop-color="#5A3E0A"/></linearGradient>
+  </defs>
+  <symbol id="am-mark" viewBox="0 0 108 150">
+    <rect width="108" height="6" rx="1.5" fill="url(#lgL)"/>
+    <path d="M10 18 L20 12 L42 12 L42 18 Z" fill="url(#lgL)" opacity=".55"/>
+    <rect x="10" y="18" width="32" height="7" rx="1.5" fill="url(#lgL)"/>
+    <path d="M16 25 L36 25 L34 108 L18 108 Z" fill="url(#lgL)" opacity=".9"/>
+    <line x1="31" y1="25" x2="30" y2="108" stroke="#F5F0E6" stroke-width="3" stroke-opacity=".3"/>
+    <rect x="12" y="108" width="28" height="5" rx="1" fill="url(#lgL)" opacity=".72"/>
+    <rect x="6" y="113" width="40" height="8" rx="2" fill="url(#lgL)"/>
+    <rect x="2" y="121" width="48" height="5" rx="1.5" fill="url(#lgL)" opacity=".45"/>
+    <path d="M64 18 L74 12 L96 12 L96 18 Z" fill="url(#lgR)" opacity=".55"/>
+    <rect x="64" y="18" width="32" height="7" rx="1.5" fill="url(#lgR)"/>
+    <path d="M70 25 L90 25 L88 108 L72 108 Z" fill="url(#lgR)" opacity=".9"/>
+    <line x1="85" y1="25" x2="84" y2="108" stroke="#F5F0E6" stroke-width="3" stroke-opacity=".3"/>
+    <rect x="66" y="108" width="28" height="5" rx="1" fill="url(#lgR)" opacity=".72"/>
+    <rect x="60" y="113" width="40" height="8" rx="2" fill="url(#lgR)"/>
+    <rect x="56" y="121" width="48" height="5" rx="1.5" fill="url(#lgR)" opacity=".45"/>
+    <rect y="126" width="108" height="5" rx="1.5" fill="url(#lgL)" opacity=".3"/>
+  </symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-out" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
@@ -369,26 +424,27 @@ html.am-cursor-on select{cursor:pointer!important}
 
 <header>
   <div class="wrap bar">
-    <a href="#top" class="logo" aria-label="AMElleventh home">
-      <svg viewBox="0 0 108 150" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="150" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#EDD07A"/><stop offset=".3" stop-color="#D4A843"/><stop offset=".65" stop-color="#B8922A"/><stop offset="1" stop-color="#7A5A14"/></linearGradient></defs><g fill="url(#lg)"><rect width="108" height="6" rx="1.5"/><path d="M10 18 L20 12 L42 12 L42 18 Z" opacity=".65"/><rect x="10" y="18" width="32" height="7" rx="1.5"/><path d="M16 25 L36 25 L34 108 L18 108 Z"/><rect x="6" y="113" width="40" height="8" rx="2"/><path d="M64 18 L74 12 L96 12 L96 18 Z" opacity=".65"/><rect x="64" y="18" width="32" height="7" rx="1.5"/><path d="M70 25 L90 25 L88 108 L72 108 Z"/><rect x="60" y="113" width="40" height="8" rx="2"/><rect y="126" width="108" height="5" rx="1.5" opacity=".4"/></g></svg>
-      <span class="logo-word">AME<b>ll</b>eventh</span>
+    <a href="#top" class="logo" aria-label="AMElleventh home" data-ar-aria="AMElleventh، الصفحة الرئيسية">
+      <svg viewBox="0 0 108 150" aria-hidden="true"><use href="#am-mark"/></svg>
+      <span class="logo-word" dir="ltr">AME<b>ll</b>eventh</span>
     </a>
     <ul class="nav">
-      <li><a href="#bpo">What we provide</a></li>
-      <li><a href="#how">How it works</a></li>
-      <li><a href="#assurance">Quality</a></li>
-      <li><a href="#record">Track record</a></li>
-      <li><a href="#more">Other services</a></li>
+      <li><a href="#bpo" data-ar="ما نقدمه">What we provide</a></li>
+      <li><a href="#how" data-ar="كيف نعمل">How it works</a></li>
+      <li><a href="#assurance" data-ar="الجودة">Quality</a></li>
+      <li><a href="#record" data-ar="سجلّ الإنجاز">Track record</a></li>
+      <li><a href="#more" data-ar="خدمات أخرى">Other services</a></li>
     </ul>
     <div class="bar-right">
-      <a href="#enquire" class="btn btn-primary" style="padding:.75rem 1.2rem">Plan a pilot <svg class="i" style="width:18px;height:18px"><use href="#i-arrow"/></svg></a>
-      <a href="https://wa.me/971527188093?text=Hi%20AMElleventh%2C%20I%27d%20like%20to%20know%20more." class="icon-btn" aria-label="Message us on WhatsApp"><svg class="i"><use href="#i-chat"/></svg></a>
-      <button class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><svg class="i" style="width:24px;height:24px"><use href="#i-menu"/></svg></button>
+      <button class="lang-btn" id="langBtn" type="button" lang="ar" aria-label="العربية">العربية</button>
+      <a href="#enquire" class="btn btn-primary" style="padding:.75rem 1.2rem"><span data-ar="خطّط لمشروعك التجريبي">Plan a pilot</span> <svg class="i" style="width:18px;height:18px"><use href="#i-arrow"/></svg></a>
+      <a href="https://wa.me/971527188093?text=Hi%20AMElleventh%2C%20I%27d%20like%20to%20know%20more." class="icon-btn" aria-label="Message us on WhatsApp" data-ar-aria="راسلنا عبر واتساب"><svg class="i"><use href="#i-chat"/></svg></a>
+      <button class="icon-btn menu-btn" aria-label="Open menu" data-ar-aria="فتح القائمة" aria-expanded="false" aria-controls="mnav"><svg class="i" style="width:24px;height:24px"><use href="#i-menu"/></svg></button>
     </div>
   </div>
   <nav class="mobile-nav" id="mnav" aria-label="Mobile">
-    <a href="#bpo">What we provide</a><a href="#how">How it works</a><a href="#assurance">Quality</a><a href="#record">Track record</a><a href="#more">Other services</a><a href="#faq">Questions</a>
-    <a href="#enquire" class="btn btn-primary">Plan a pilot</a>
+    <a href="#bpo" data-ar="ما نقدمه">What we provide</a><a href="#how" data-ar="كيف نعمل">How it works</a><a href="#assurance" data-ar="الجودة">Quality</a><a href="#record" data-ar="سجلّ الإنجاز">Track record</a><a href="#more" data-ar="خدمات أخرى">Other services</a><a href="#faq" data-ar="الأسئلة">Questions</a>
+    <a href="#enquire" class="btn btn-primary" data-ar="خطّط لمشروعك التجريبي">Plan a pilot</a>
   </nav>
 </header>
 
@@ -397,27 +453,27 @@ html.am-cursor-on select{cursor:pointer!important}
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="pill"><i></i>Outsourced teams for UAE &amp; GCC businesses</div>
-      <h1>Your team in Manila. <span class="g">Your partner in Dubai.</span></h1>
-      <p>Customer operations and back-office teams for UAE and GCC businesses, delivered in the Philippines and governed from Dubai. You get lower costs, one contract and someone local who answers for the results.</p>
+      <div class="pill"><i></i><span data-ar="فرق عمل خارجية لشركات الإمارات والخليج">Outsourced teams for UAE &amp; GCC businesses</span></div>
+      <h1 data-ar="فريقك في مانيلا. <span class='g'>وشريكك في دبي.</span>">Your team in Manila. <span class="g">Your partner in Dubai.</span></h1>
+      <p data-ar="فرق عمليات خدمة العملاء والخدمات المساندة لشركات الإمارات والخليج، تُنفَّذ في الفلبين وتُدار من دبي. تحصل على تكلفة أقل، وعقد واحد، وشريك محلي يتحمّل مسؤولية النتائج.">Customer operations and back-office teams for UAE and GCC businesses, delivered in the Philippines and governed from Dubai. You get lower costs, one contract and someone local who answers for the results.</p>
       <div class="cta-row">
-        <a href="#enquire" class="btn btn-primary">Plan a pilot <svg class="i" style="width:18px;height:18px"><use href="#i-arrow"/></svg></a>
-        <a href="#bpo" class="btn btn-outline">See what we provide</a>
+        <a href="#enquire" class="btn btn-primary"><span data-ar="خطّط لمشروعك التجريبي">Plan a pilot</span> <svg class="i" style="width:18px;height:18px"><use href="#i-arrow"/></svg></a>
+        <a href="#bpo" class="btn btn-outline" data-ar="اطّلع على خدماتنا">See what we provide</a>
       </div>
-      <p class="hero-note">Pilots typically start from 30 seats. Smaller requirement? <a href="#enquire">Book a scoping call</a> and we'll tell you honestly whether we're the right fit.</p>
+      <p class="hero-note" data-ar="تبدأ المشاريع التجريبية عادةً من 30 مقعدًا. هل احتياجك أصغر؟ <a href='#enquire'>احجز مكالمة لتحديد النطاق</a> وسنخبرك بصراحة إن كنا الخيار المناسب.">Pilots typically start from 30 seats. Smaller requirement? <a href="#enquire">Book a scoping call</a> and we'll tell you honestly whether we're the right fit.</p>
     </div>
-    <aside class="hero-card" aria-label="How the service is split between Dubai and Manila">
+    <aside class="hero-card" aria-label="How the service is split between Dubai and Manila" data-ar-aria="توزيع الخدمة بين دبي ومانيلا">
       <div class="hc-row">
-        <div class="hc-city"><svg class="i"><use href="#i-pin"/></svg><div><b>Dubai</b><span>Your account lead</span></div></div>
+        <div class="hc-city"><svg class="i"><use href="#i-pin"/></svg><div><b data-ar="دبي">Dubai</b><span data-ar="مدير حسابك">Your account lead</span></div></div>
         <div class="hc-time" id="t-dxb">--:--</div>
       </div>
-      <ul class="hc-list"><li>Contract, pricing and service levels</li><li>Partner selection and quality control</li><li>Monthly performance reporting</li></ul>
-      <div class="hc-gap">Manila is 4 hours ahead</div>
+      <ul class="hc-list"><li data-ar="العقد والأسعار ومستويات الخدمة">Contract, pricing and service levels</li><li data-ar="اختيار الشركاء ومراقبة الجودة">Partner selection and quality control</li><li data-ar="تقارير الأداء الشهرية">Monthly performance reporting</li></ul>
+      <div class="hc-gap" data-ar="مانيلا تسبق دبي بـ 4 ساعات">Manila is 4 hours ahead</div>
       <div class="hc-row">
-        <div class="hc-city"><svg class="i"><use href="#i-pin"/></svg><div><b>Manila</b><span>Your delivery team</span></div></div>
+        <div class="hc-city"><svg class="i"><use href="#i-pin"/></svg><div><b data-ar="مانيلا">Manila</b><span data-ar="فريق التنفيذ لديك">Your delivery team</span></div></div>
         <div class="hc-time" id="t-mnl">--:--</div>
       </div>
-      <ul class="hc-list"><li>Customer support and back-office roles</li><li>Shifts set to your business hours</li></ul>
+      <ul class="hc-list"><li data-ar="وظائف دعم العملاء والخدمات المساندة">Customer support and back-office roles</li><li data-ar="ورديات تتوافق مع ساعات عملك">Shifts set to your business hours</li></ul>
     </aside>
   </div>
 </section>
@@ -425,47 +481,47 @@ html.am-cursor-on select{cursor:pointer!important}
 <!-- TRUST -->
 <div class="trust">
   <div class="wrap trust-grid">
-    <div class="trust-item"><svg class="i"><use href="#i-check"/></svg><div><b>21+ years</b><span>founder's experience across the UAE and Philippines</span></div></div>
-    <div class="trust-item"><svg class="i"><use href="#i-check"/></svg><div><b>Zero audit findings</b><span>over a 4-year Central Bank cycle (founder's previous role)</span></div></div>
-    <div class="trust-item"><svg class="i"><use href="#i-check"/></svg><div><b>One contract</b><span>governed in the UAE</span></div></div>
-    <div class="trust-item"><svg class="i"><use href="#i-check"/></svg><div><b>Monthly reporting</b><span>against agreed service levels</span></div></div>
+    <div class="trust-item"><svg class="i"><use href="#i-check"/></svg><div><b data-ar="أكثر من 21 عامًا">21+ years</b><span data-ar="من خبرة المؤسس بين الإمارات والفلبين">founder's experience across the UAE and Philippines</span></div></div>
+    <div class="trust-item"><svg class="i"><use href="#i-check"/></svg><div><b data-ar="صفر ملاحظات تدقيق">Zero audit findings</b><span data-ar="على مدى دورة رقابية مدتها 4 سنوات لدى المصرف المركزي (في منصب سابق للمؤسس)">over a 4-year Central Bank cycle (founder's previous role)</span></div></div>
+    <div class="trust-item"><svg class="i"><use href="#i-check"/></svg><div><b data-ar="عقد واحد">One contract</b><span data-ar="يُدار من الإمارات">governed in the UAE</span></div></div>
+    <div class="trust-item"><svg class="i"><use href="#i-check"/></svg><div><b data-ar="تقارير شهرية">Monthly reporting</b><span data-ar="مقابل مستويات الخدمة المتفق عليها">against agreed service levels</span></div></div>
   </div>
 </div>
 
 <!-- BPO OFFER -->
 <section id="bpo">
   <div class="wrap">
-    <div class="kicker">What we provide</div>
-    <h2>Teams that run your customer operations and back office</h2>
-    <p class="lead">Hire a full team or a single function. We set it up, manage it from Dubai and report on it every month. Each role is priced separately, so you only pay for what each position needs.</p>
+    <div class="kicker" data-ar="ما نقدمه">What we provide</div>
+    <h2 data-ar="فرق تدير عمليات خدمة العملاء والخدمات المساندة لديك">Teams that run your customer operations and back office</h2>
+    <p class="lead" data-ar="وظّف فريقًا كاملًا أو وظيفة واحدة. نحن نؤسس الفريق ونديره من دبي ونرفع لك تقريرًا عنه كل شهر. يُسعَّر كل دور على حدة، فتدفع فقط مقابل ما تحتاجه كل وظيفة.">Hire a full team or a single function. We set it up, manage it from Dubai and report on it every month. Each role is priced separately, so you only pay for what each position needs.</p>
     <div class="cards c2">
       <div class="card offer">
         <div class="tile"><svg class="i"><use href="#i-chat"/></svg></div>
-        <h3>Customer operations</h3>
-        <p>Voice, chat and email support for your customers, with supervision and quality monitoring built in.</p>
-        <div class="chips"><span>Customer service agents</span><span>Team leaders</span><span>Quality monitoring</span><span>Account management</span><span>Operations management</span></div>
+        <h3 data-ar="عمليات خدمة العملاء">Customer operations</h3>
+        <p data-ar="دعم عملائك عبر الهاتف والدردشة والبريد الإلكتروني، مع إشراف ومراقبة للجودة ضمن الخدمة.">Voice, chat and email support for your customers, with supervision and quality monitoring built in.</p>
+        <div class="chips"><span data-ar="موظفو خدمة العملاء">Customer service agents</span><span data-ar="قادة الفرق">Team leaders</span><span data-ar="مراقبة الجودة">Quality monitoring</span><span data-ar="إدارة الحسابات">Account management</span><span data-ar="إدارة العمليات">Operations management</span></div>
       </div>
       <div class="card offer">
         <div class="tile"><svg class="i"><use href="#i-people"/></svg></div>
-        <h3>Back office and people support</h3>
-        <p>The admin and finance work that keeps your business running, done to your processes.</p>
-        <div class="chips"><span>Finance &amp; accounting</span><span>HR administration</span><span>Payroll &amp; benefits</span><span>Recruitment</span><span>Training</span><span>Facilities &amp; admin</span></div>
+        <h3 data-ar="الخدمات المساندة ودعم الكوادر">Back office and people support</h3>
+        <p data-ar="الأعمال الإدارية والمالية التي تُبقي نشاطك قائمًا، تُنجَز وفق إجراءاتك.">The admin and finance work that keeps your business running, done to your processes.</p>
+        <div class="chips"><span data-ar="المالية والمحاسبة">Finance &amp; accounting</span><span data-ar="إدارة الموارد البشرية">HR administration</span><span data-ar="الرواتب والمزايا">Payroll &amp; benefits</span><span data-ar="التوظيف">Recruitment</span><span data-ar="التدريب">Training</span><span data-ar="المرافق والشؤون الإدارية">Facilities &amp; admin</span></div>
       </div>
     </div>
-    <div class="note-bar"><svg class="i"><use href="#i-scale"/></svg><p><b>Why it costs less:</b> we don't run a floor of our own. We set the standard and the rate card, then manage vetted delivery partners to it, so you don't pay for our overheads. <button class="link" data-open="d-model">See who does what</button></p></div>
+    <div class="note-bar"><svg class="i"><use href="#i-scale"/></svg><p data-ar="<b>لماذا تكلفتنا أقل؟</b> لأننا لا نشغّل مركز عمل خاصًا بنا. نضع المعيار وقائمة الأسعار، ثم ندير شركاء تنفيذ معتمدين وفقها، فلا تتحمل تكاليفنا التشغيلية. <button class='link' data-open='d-model'>تعرّف على توزيع الأدوار</button>"><b>Why it costs less:</b> we don't run a floor of our own. We set the standard and the rate card, then manage vetted delivery partners to it, so you don't pay for our overheads. <button class="link" data-open="d-model">See who does what</button></p></div>
   </div>
 </section>
 
 <!-- HOW IT WORKS -->
 <section class="alt" id="how">
   <div class="wrap">
-    <div class="kicker">How it works</div>
-    <h2>From first call to a full team</h2>
+    <div class="kicker" data-ar="كيف نعمل">How it works</div>
+    <h2 data-ar="من المكالمة الأولى إلى فريق متكامل">From first call to a full team</h2>
     <div class="steps">
-      <div class="step"><h3>Scope</h3><p>A scoping call to agree the roles, volumes, hours and service levels. You get a written proposal with per-role pricing.</p></div>
-      <div class="step"><h3>Pilot</h3><p>Start with a small team, typically from 30 seats, and judge the quality against agreed targets.</p></div>
-      <div class="step"><h3>Scale</h3><p>Grow to full size once the pilot hits its targets. Most programmes run around 100 seats.</p></div>
-      <div class="step"><h3>Review</h3><p>Monthly performance and quality reports from your account lead in Dubai.</p></div>
+      <div class="step"><h3 data-ar="تحديد النطاق">Scope</h3><p data-ar="مكالمة لتحديد النطاق نتفق فيها على الأدوار والأحجام وساعات العمل ومستويات الخدمة. ثم يصلك مقترح مكتوب بأسعار كل دور.">A scoping call to agree the roles, volumes, hours and service levels. You get a written proposal with per-role pricing.</p></div>
+      <div class="step"><h3 data-ar="التجربة">Pilot</h3><p data-ar="تبدأ بفريق صغير، عادةً من 30 مقعدًا، وتقيّم الجودة وفق أهداف متفق عليها.">Start with a small team, typically from 30 seats, and judge the quality against agreed targets.</p></div>
+      <div class="step"><h3 data-ar="التوسّع">Scale</h3><p data-ar="ننمو إلى الحجم الكامل متى حقّقت التجربة أهدافها. وتعمل معظم البرامج بنحو 100 مقعد.">Grow to full size once the pilot hits its targets. Most programmes run around 100 seats.</p></div>
+      <div class="step"><h3 data-ar="المراجعة">Review</h3><p data-ar="تقارير شهرية عن الأداء والجودة من مدير حسابك في دبي.">Monthly performance and quality reports from your account lead in Dubai.</p></div>
     </div>
   </div>
 </section>
@@ -474,27 +530,27 @@ html.am-cursor-on select{cursor:pointer!important}
 <section id="assurance">
   <div class="wrap split">
     <div>
-      <div class="kicker">How we manage delivery</div>
-      <h2>What protects you when the team is offshore</h2>
-      <p class="lead">Outsourcing goes wrong when nobody owns quality. Here is how we own it.</p>
+      <div class="kicker" data-ar="كيف ندير التنفيذ">How we manage delivery</div>
+      <h2 data-ar="ما يحميك حين يكون الفريق خارج بلدك">What protects you when the team is offshore</h2>
+      <p class="lead" data-ar="تتعثر الاستعانة بمصادر خارجية حين لا يتحمّل أحد مسؤولية الجودة. وهكذا نتحمّلها نحن.">Outsourcing goes wrong when nobody owns quality. Here is how we own it.</p>
       <div class="acc">
-        <details open><summary>Partner selection<span class="plus">+</span></summary><div class="body">Delivery partners are vetted before they take on work: their facilities, management, hiring standards and track record. Each one signs our service agreement and works to our rate card.</div></details>
-        <details><summary>Quality monitoring<span class="plus">+</span></summary><div class="body">Every programme has agreed targets, such as response times, accuracy and resolution. We review them weekly with the partner, and you get a summary every month.</div></details>
-        <details><summary>Escalation<span class="plus">+</span></summary><div class="body">Your account lead in Dubai is your single point of escalation. If a target slips, we agree a fix with the partner and tell you what's being done and by when.</div></details>
-        <details><summary>Continuity<span class="plus">+</span></summary><div class="body">Your processes are written down and backup staff are trained, so absences and staff turnover don't stop your operation. If a partner underperforms, we can move the work to another one.</div></details>
-        <details><summary>Data and confidentiality<span class="plus">+</span></summary><div class="body">Confidentiality and data-handling terms are written into both your contract and the partner agreement. Access to your systems is limited to the roles that need it, and the controls are agreed with you during scoping.</div></details>
+        <details open><summary><span data-ar="اختيار الشركاء">Partner selection</span><span class="plus">+</span></summary><div class="body" data-ar="يُقيَّم شركاء التنفيذ قبل أن يتسلّموا أي عمل: منشآتهم وإدارتهم ومعايير التوظيف لديهم وسجلّ أعمالهم. ويوقّع كل شريك اتفاقية الخدمة الخاصة بنا ويعمل وفق قائمة أسعارنا.">Delivery partners are vetted before they take on work: their facilities, management, hiring standards and track record. Each one signs our service agreement and works to our rate card.</div></details>
+        <details><summary><span data-ar="مراقبة الجودة">Quality monitoring</span><span class="plus">+</span></summary><div class="body" data-ar="لكل برنامج أهداف متفق عليها، مثل زمن الاستجابة والدقة وحلّ الطلبات. نراجعها أسبوعيًا مع الشريك، وتصلك خلاصة شهرية.">Every programme has agreed targets, such as response times, accuracy and resolution. We review them weekly with the partner, and you get a summary every month.</div></details>
+        <details><summary><span data-ar="التصعيد">Escalation</span><span class="plus">+</span></summary><div class="body" data-ar="مدير حسابك في دبي هو نقطة التصعيد الوحيدة لديك. إذا تراجع أحد المؤشرات، نتفق مع الشريك على حلّ ونُبلغك بما يجري اتخاذه وبموعده.">Your account lead in Dubai is your single point of escalation. If a target slips, we agree a fix with the partner and tell you what's being done and by when.</div></details>
+        <details><summary><span data-ar="استمرارية العمل">Continuity</span><span class="plus">+</span></summary><div class="body" data-ar="تُوثَّق إجراءاتك ويُدرَّب موظفون احتياطيون، فلا يعطّل الغياب أو دوران الموظفين عملياتك. وإن قصّر أحد الشركاء، يمكننا نقل العمل إلى شريك آخر.">Your processes are written down and backup staff are trained, so absences and staff turnover don't stop your operation. If a partner underperforms, we can move the work to another one.</div></details>
+        <details><summary><span data-ar="البيانات والسرّية">Data and confidentiality</span><span class="plus">+</span></summary><div class="body" data-ar="تُدرج شروط السرّية والتعامل مع البيانات في عقدك وفي اتفاقية الشريك معًا. ويقتصر الوصول إلى أنظمتك على الأدوار التي تحتاجه، وتُتفق الضوابط معك أثناء تحديد النطاق.">Confidentiality and data-handling terms are written into both your contract and the partner agreement. Access to your systems is limited to the roles that need it, and the controls are agreed with you during scoping.</div></details>
       </div>
     </div>
-    <div class="report" aria-label="Example monthly report">
-      <div class="report-head"><b>Monthly performance report</b><span>Example layout</span></div>
+    <div class="report" aria-label="Example monthly report" data-ar-aria="نموذج لتقرير شهري">
+      <div class="report-head"><b data-ar="تقرير الأداء الشهري">Monthly performance report</b><span data-ar="نموذج للتخطيط">Example layout</span></div>
       <div class="kpis">
-        <div><small>Service level met</small><b>Target vs actual</b><i style="--w:92%"></i></div>
-        <div><small>Average response time</small><b>Target vs actual</b><i style="--w:78%"></i></div>
-        <div><small>Quality score</small><b>Target vs actual</b><i style="--w:88%"></i></div>
-        <div><small>Attendance</small><b>Target vs actual</b><i style="--w:95%"></i></div>
+        <div><small data-ar="الالتزام بمستوى الخدمة">Service level met</small><b data-ar="المستهدف مقابل الفعلي">Target vs actual</b><i style="--w:92%"></i></div>
+        <div><small data-ar="متوسط زمن الاستجابة">Average response time</small><b data-ar="المستهدف مقابل الفعلي">Target vs actual</b><i style="--w:78%"></i></div>
+        <div><small data-ar="درجة الجودة">Quality score</small><b data-ar="المستهدف مقابل الفعلي">Target vs actual</b><i style="--w:88%"></i></div>
+        <div><small data-ar="نسبة الحضور">Attendance</small><b data-ar="المستهدف مقابل الفعلي">Target vs actual</b><i style="--w:95%"></i></div>
       </div>
-      <ul class="report-list"><li>Issues raised and how they were fixed</li><li>Headcount and staff changes</li><li>Actions agreed for next month</li></ul>
-      <p class="fine">This is an example of the layout only. Your report uses the targets in your contract.</p>
+      <ul class="report-list"><li data-ar="المشكلات المُثارة وكيف عولجت">Issues raised and how they were fixed</li><li data-ar="عدد الموظفين والتغييرات في الفريق">Headcount and staff changes</li><li data-ar="الإجراءات المتفق عليها للشهر القادم">Actions agreed for next month</li></ul>
+      <p class="fine" data-ar="هذا نموذج للتخطيط فقط. يعتمد تقريرك على الأهداف الواردة في عقدك.">This is an example of the layout only. Your report uses the targets in your contract.</p>
     </div>
   </div>
 </section>
@@ -502,14 +558,14 @@ html.am-cursor-on select{cursor:pointer!important}
 <!-- FOUNDER TRACK RECORD -->
 <section class="alt" id="record">
   <div class="wrap">
-    <div class="kicker">Track record</div>
-    <h2>AMElleventh is new. The experience behind it isn't.</h2>
-    <p class="lead">Engagements below were led by our founder in previous roles, before AMElleventh was formed. They're shown without client names to protect confidentiality.</p>
+    <div class="kicker" data-ar="سجلّ الإنجاز">Track record</div>
+    <h2 data-ar="AMElleventh جديدة. أما الخبرة وراءها فليست كذلك.">AMElleventh is new. The experience behind it isn't.</h2>
+    <p class="lead" data-ar="قاد مؤسسنا الأعمال التالية في مناصب سابقة، قبل تأسيس AMElleventh. وهي معروضة دون أسماء العملاء حفاظًا على السرّية.">Engagements below were led by our founder in previous roles, before AMElleventh was formed. They're shown without client names to protect confidentiality.</p>
     <div class="cases">
-      <details class="case"><summary><div><b>Licensed digital payments platform</b><span>UAE · Financial services · Founder's previous role</span></div><span class="plus">+</span></summary><div class="case-body"><p><strong>The brief:</strong> build the operations, compliance and governance needed for Central Bank approval, starting from nothing.</p><p class="result">Dual licence (SVF + RPSCS) approved. Zero audit findings over four years, 180+ written procedures and 10,000+ customers.</p></div></details>
-      <details class="case"><summary><div><b>Three-country technology services</b><span>UAE, India and the Philippines · Founder's previous role</span></div><span class="plus">+</span></summary><div class="case-body"><p><strong>The brief:</strong> set up delivery, governance and commercial controls in three countries at the same time.</p><p class="result">Managed-services company founded in the Philippines and a 50-person development team governed in India, with full P&amp;L accountability.</p></div></details>
-      <details class="case"><summary><div><b>BPO investment structure</b><span>Philippines and UAE · Founder's previous engagement</span></div><span class="plus">+</span></summary><div class="case-body"><p><strong>The brief:</strong> structure a BPO investment across two countries, with compliant local ownership and a UAE base.</p><p class="result">PHP 53M investment framework with SEC-compliant shareholding and a two-entity operating model.</p></div></details>
-      <details class="case"><summary><div><b>National mobile payments programme</b><span>Middle East · Fintech · Founder's previous engagement</span></div><span class="plus">+</span></summary><div class="case-body"><p><strong>The brief:</strong> design the licensing route, business model and rollout plan for a licensed payments network.</p><p class="result">USD 5.3M programme design and a 36-month roadmap, ready for investors.</p></div></details>
+      <details class="case"><summary><div><b data-ar="منصة مدفوعات رقمية مرخّصة">Licensed digital payments platform</b><span data-ar="الإمارات · الخدمات المالية · منصب سابق للمؤسس">UAE · Financial services · Founder's previous role</span></div><span class="plus">+</span></summary><div class="case-body"><p data-ar="<strong>المهمة:</strong> بناء العمليات والامتثال والحوكمة اللازمة للحصول على موافقة المصرف المركزي، بدءًا من الصفر."><strong>The brief:</strong> build the operations, compliance and governance needed for Central Bank approval, starting from nothing.</p><p class="result" data-ar="اعتماد الترخيص المزدوج (SVF + RPSCS). صفر ملاحظات تدقيق على مدى أربع سنوات، وأكثر من 180 إجراءً مكتوبًا، وأكثر من 10,000 عميل.">Dual licence (SVF + RPSCS) approved. Zero audit findings over four years, 180+ written procedures and 10,000+ customers.</p></div></details>
+      <details class="case"><summary><div><b data-ar="خدمات تقنية في ثلاث دول">Three-country technology services</b><span data-ar="الإمارات والهند والفلبين · منصب سابق للمؤسس">UAE, India and the Philippines · Founder's previous role</span></div><span class="plus">+</span></summary><div class="case-body"><p data-ar="<strong>المهمة:</strong> إنشاء منظومة التنفيذ والحوكمة والضوابط التجارية في ثلاث دول في آنٍ واحد."><strong>The brief:</strong> set up delivery, governance and commercial controls in three countries at the same time.</p><p class="result" data-ar="تأسيس شركة خدمات مُدارة في الفلبين وفريق تطوير من 50 شخصًا تحت الحوكمة في الهند، مع مسؤولية كاملة عن الأرباح والخسائر.">Managed-services company founded in the Philippines and a 50-person development team governed in India, with full P&amp;L accountability.</p></div></details>
+      <details class="case"><summary><div><b data-ar="هيكل استثماري لقطاع BPO">BPO investment structure</b><span data-ar="الفلبين والإمارات · مهمة سابقة للمؤسس">Philippines and UAE · Founder's previous engagement</span></div><span class="plus">+</span></summary><div class="case-body"><p data-ar="<strong>المهمة:</strong> هيكلة استثمار في قطاع BPO عبر دولتين، بملكية محلية متوافقة مع الأنظمة وقاعدة في الإمارات."><strong>The brief:</strong> structure a BPO investment across two countries, with compliant local ownership and a UAE base.</p><p class="result" data-ar="إطار استثماري بقيمة 53 مليون بيزو فلبيني مع هيكل ملكية متوافق مع متطلبات هيئة الأوراق المالية والبورصات (SEC) ونموذج تشغيلي بكيانين.">PHP 53M investment framework with SEC-compliant shareholding and a two-entity operating model.</p></div></details>
+      <details class="case"><summary><div><b data-ar="برنامج وطني للمدفوعات عبر الجوال">National mobile payments programme</b><span data-ar="الشرق الأوسط · التقنية المالية · مهمة سابقة للمؤسس">Middle East · Fintech · Founder's previous engagement</span></div><span class="plus">+</span></summary><div class="case-body"><p data-ar="<strong>المهمة:</strong> تصميم مسار الترخيص ونموذج الأعمال وخطة الإطلاق لشبكة مدفوعات مرخّصة."><strong>The brief:</strong> design the licensing route, business model and rollout plan for a licensed payments network.</p><p class="result" data-ar="تصميم برنامج بقيمة 5.3 مليون دولار أمريكي وخارطة طريق لمدة 36 شهرًا، جاهزة للمستثمرين.">USD 5.3M programme design and a 36-month roadmap, ready for investors.</p></div></details>
     </div>
   </div>
 </section>
@@ -518,21 +574,21 @@ html.am-cursor-on select{cursor:pointer!important}
 <section id="story">
   <div class="wrap split">
     <div>
-      <div class="kicker">Leadership</div>
-      <h2>A partner, not another vendor</h2>
+      <div class="kicker" data-ar="القيادة">Leadership</div>
+      <h2 data-ar="شريك، لا مجرد مورّد آخر">A partner, not another vendor</h2>
       <article class="quote">
         <div class="mark" aria-hidden="true">“</div>
-        <blockquote>“Outsourcing should feel like your own team, only easier to run.”</blockquote>
-        <p>I've worked the BPO floor in the Philippines and run bank operations in the UAE. I built AMElleventh so GCC businesses get Philippine talent with someone local who answers for the results.</p>
-        <cite>— Melfer Elizaga, Founder</cite>
+        <blockquote data-ar="«ينبغي أن تبدو الاستعانة بمصادر خارجية كأنها فريقك أنت، لكنها أسهل في الإدارة.»">“Outsourcing should feel like your own team, only easier to run.”</blockquote>
+        <p data-ar="عملتُ ميدانيًا في قطاع BPO في الفلبين وأدرتُ عمليات مصرفية في الإمارات. وأسّستُ AMElleventh ليحصل أصحاب الأعمال في الخليج على الكفاءات الفلبينية مع شريك محلي يتحمّل مسؤولية النتائج.">I've worked the BPO floor in the Philippines and run bank operations in the UAE. I built AMElleventh so GCC businesses get Philippine talent with someone local who answers for the results.</p>
+        <cite data-ar="— المؤسس، AMElleventh">— Founder, AMElleventh</cite>
       </article>
     </div>
     <div class="timeline">
-      <div class="tl"><div class="when">Philippines</div><h3>BPO and insurance operations</h3><p>Service delivery, quality control and team leadership.</p></div>
-      <div class="tl"><div class="when">UAE · 13 years</div><h3>Banking: FGB, Emirates NBD and FAB</h3><p>MIS, analytics, data governance and performance operations.</p></div>
-      <div class="tl"><div class="when">UAE</div><h3>Licensed digital payments</h3><p>Central Bank dual-licensed payments business, built from scratch.</p></div>
-      <div class="tl"><div class="when">UAE · India · Philippines</div><h3>Multi-country technology services</h3><p>Delivery and governance across three countries.</p></div>
-      <div class="tl now"><div class="when">2026</div><h3>AMElleventh founded in Dubai</h3><p>Philippine delivery with UAE accountability.</p></div>
+      <div class="tl"><div class="when" data-ar="الفلبين">Philippines</div><h3 data-ar="عمليات BPO والتأمين">BPO and insurance operations</h3><p data-ar="تقديم الخدمة ومراقبة الجودة وقيادة الفرق.">Service delivery, quality control and team leadership.</p></div>
+      <div class="tl"><div class="when" data-ar="الإمارات · 13 عامًا">UAE · 13 years</div><h3 data-ar="القطاع المصرفي: بنك الخليج الأول، وبنك الإمارات دبي الوطني، وبنك أبوظبي الأول">Banking: FGB, Emirates NBD and FAB</h3><p data-ar="نظم المعلومات الإدارية والتحليلات وحوكمة البيانات وعمليات الأداء.">MIS, analytics, data governance and performance operations.</p></div>
+      <div class="tl"><div class="when" data-ar="الإمارات">UAE</div><h3 data-ar="مدفوعات رقمية مرخّصة">Licensed digital payments</h3><p data-ar="شركة مدفوعات حاصلة على ترخيص مزدوج من المصرف المركزي، بُنيت من الصفر.">Central Bank dual-licensed payments business, built from scratch.</p></div>
+      <div class="tl"><div class="when" data-ar="الإمارات · الهند · الفلبين">UAE · India · Philippines</div><h3 data-ar="خدمات تقنية متعددة الدول">Multi-country technology services</h3><p data-ar="تنفيذ وحوكمة عبر ثلاث دول.">Delivery and governance across three countries.</p></div>
+      <div class="tl now"><div class="when">2026</div><h3 data-ar="تأسيس AMElleventh في دبي">AMElleventh founded in Dubai</h3><p data-ar="تنفيذ فلبيني بمسؤولية إماراتية.">Philippine delivery with UAE accountability.</p></div>
     </div>
   </div>
 </section>
@@ -540,14 +596,14 @@ html.am-cursor-on select{cursor:pointer!important}
 <!-- OTHER PATHS -->
 <section class="alt" id="more">
   <div class="wrap">
-    <div class="kicker">Also from AMElleventh</div>
-    <h2>Other services and partnerships</h2>
-    <p class="lead">Outsourced teams are our main business. These services support clients setting up or growing in the region.</p>
+    <div class="kicker" data-ar="ضمن AMElleventh أيضًا">Also from AMElleventh</div>
+    <h2 data-ar="خدمات وشراكات أخرى">Other services and partnerships</h2>
+    <p class="lead" data-ar="فرق العمل الخارجية هي نشاطنا الرئيسي. وتدعم هذه الخدمات العملاء الذين يؤسسون أعمالهم أو يوسّعونها في المنطقة.">Outsourced teams are our main business. These services support clients setting up or growing in the region.</p>
     <div class="cards c4">
-      <button class="card" data-open="d-consult"><div class="tile"><svg class="i"><use href="#i-chart"/></svg></div><h3>Business consultancy</h3><p>Market entry, commercial structure and regulatory readiness.</p><span class="more">Details and fees <svg class="i" style="width:16px;height:16px"><use href="#i-arrow"/></svg></span></button>
-      <button class="card" data-open="d-it"><div class="tile"><svg class="i"><use href="#i-code"/></svg></div><h3>IT solutions</h3><p>ERP and CRM setup, custom software, managed IT and automation.</p><span class="more">Details <svg class="i" style="width:16px;height:16px"><use href="#i-arrow"/></svg></span></button>
-      <button class="card" data-open="d-rd"><div class="tile"><svg class="i"><use href="#i-doc"/></svg></div><h3>R&amp;D tax advisory</h3><p>Get your records ready for the UAE R&amp;D tax incentive.</p><span class="more">Details <svg class="i" style="width:16px;height:16px"><use href="#i-arrow"/></svg></span></button>
-      <button class="card" data-open="d-partners"><div class="tile"><svg class="i"><use href="#i-handshake"/></svg></div><h3>Partner with us</h3><p>For BPO companies and licensing agencies.</p><span class="more">Partner options <svg class="i" style="width:16px;height:16px"><use href="#i-arrow"/></svg></span></button>
+      <button class="card" data-open="d-consult"><div class="tile"><svg class="i"><use href="#i-chart"/></svg></div><h3 data-ar="الاستشارات التجارية">Business consultancy</h3><p data-ar="دخول الأسواق والهيكلة التجارية والجاهزية التنظيمية.">Market entry, commercial structure and regulatory readiness.</p><span class="more"><span data-ar="التفاصيل والرسوم">Details and fees</span> <svg class="i" style="width:16px;height:16px"><use href="#i-arrow"/></svg></span></button>
+      <button class="card" data-open="d-it"><div class="tile"><svg class="i"><use href="#i-code"/></svg></div><h3 data-ar="الحلول التقنية">IT solutions</h3><p data-ar="إعداد أنظمة ERP وCRM، والبرمجيات المخصصة، وخدمات تقنية المعلومات المُدارة، والأتمتة.">ERP and CRM setup, custom software, managed IT and automation.</p><span class="more"><span data-ar="التفاصيل">Details</span> <svg class="i" style="width:16px;height:16px"><use href="#i-arrow"/></svg></span></button>
+      <button class="card" data-open="d-rd"><div class="tile"><svg class="i"><use href="#i-doc"/></svg></div><h3 data-ar="الاستشارات الضريبية للبحث والتطوير">R&amp;D tax advisory</h3><p data-ar="جهّز سجلاتك للاستفادة من حافز البحث والتطوير الضريبي في الإمارات.">Get your records ready for the UAE R&amp;D tax incentive.</p><span class="more"><span data-ar="التفاصيل">Details</span> <svg class="i" style="width:16px;height:16px"><use href="#i-arrow"/></svg></span></button>
+      <button class="card" data-open="d-partners"><div class="tile"><svg class="i"><use href="#i-handshake"/></svg></div><h3 data-ar="كن شريكًا لنا">Partner with us</h3><p data-ar="لشركات BPO ووكالات الترخيص.">For BPO companies and licensing agencies.</p><span class="more"><span data-ar="خيارات الشراكة">Partner options</span> <svg class="i" style="width:16px;height:16px"><use href="#i-arrow"/></svg></span></button>
     </div>
   </div>
 </section>
@@ -555,13 +611,13 @@ html.am-cursor-on select{cursor:pointer!important}
 <!-- FAQ -->
 <section id="faq">
   <div class="wrap split">
-    <div><div class="kicker">Questions</div><h2>Common questions</h2><p class="lead">Can't find your answer? Send us a WhatsApp message.</p></div>
+    <div><div class="kicker" data-ar="الأسئلة">Questions</div><h2 data-ar="أسئلة شائعة">Common questions</h2><p class="lead" data-ar="لم تجد إجابتك؟ راسلنا عبر واتساب.">Can't find your answer? Send us a WhatsApp message.</p></div>
     <div class="acc">
-      <details><summary>Is 30 seats the minimum?<span class="plus">+</span></summary><div class="body">It's where most pilots start, because that's enough to set up proper supervision and quality control. If you need fewer people, book a scoping call. We'll tell you honestly whether we can do it well or whether another option suits you better.</div></details>
-      <details><summary>How is pricing set?<span class="plus">+</span></summary><div class="body">Each role is priced on its own. You get the full rate card in your written proposal after the scoping call.</div></details>
-      <details><summary>Who does the work?<span class="plus">+</span></summary><div class="body">Vetted delivery partners, mostly in the Philippines, working under our service agreements. Your contract, your account lead and our accountability all stay with AMElleventh in the UAE.</div></details>
-      <details><summary>Can the team cover UAE business hours?<span class="plus">+</span></summary><div class="body">Yes. Manila is four hours ahead of Dubai, and shifts are set around the hours you need, including evenings and weekends.</div></details>
-      <details><summary>How quickly can a pilot start?<span class="plus">+</span></summary><div class="body">It depends on the roles and volumes. Your proposal includes a start date and a ramp-up plan once scoping is done.</div></details>
+      <details><summary><span data-ar="هل 30 مقعدًا هو الحد الأدنى؟">Is 30 seats the minimum?</span><span class="plus">+</span></summary><div class="body" data-ar="هي نقطة البداية لمعظم المشاريع التجريبية، لأنها تكفي لإقامة إشراف ومراقبة جودة سليمين. وإن كنت تحتاج عددًا أقل، فاحجز مكالمة لتحديد النطاق. سنخبرك بصراحة إن كان بإمكاننا تنفيذه بجودة أم أن خيارًا آخر أنسب لك.">It's where most pilots start, because that's enough to set up proper supervision and quality control. If you need fewer people, book a scoping call. We'll tell you honestly whether we can do it well or whether another option suits you better.</div></details>
+      <details><summary><span data-ar="كيف تُحدَّد الأسعار؟">How is pricing set?</span><span class="plus">+</span></summary><div class="body" data-ar="يُسعَّر كل دور على حدة. وتحصل على قائمة الأسعار الكاملة في مقترحك المكتوب بعد مكالمة تحديد النطاق.">Each role is priced on its own. You get the full rate card in your written proposal after the scoping call.</div></details>
+      <details><summary><span data-ar="من ينفّذ العمل؟">Who does the work?</span><span class="plus">+</span></summary><div class="body" data-ar="شركاء تنفيذ معتمدون، معظمهم في الفلبين، يعملون بموجب اتفاقيات الخدمة الخاصة بنا. ويبقى عقدك ومدير حسابك ومسؤوليتنا لدى AMElleventh في الإمارات.">Vetted delivery partners, mostly in the Philippines, working under our service agreements. Your contract, your account lead and our accountability all stay with AMElleventh in the UAE.</div></details>
+      <details><summary><span data-ar="هل يمكن للفريق تغطية ساعات العمل في الإمارات؟">Can the team cover UAE business hours?</span><span class="plus">+</span></summary><div class="body" data-ar="نعم. مانيلا تسبق دبي بأربع ساعات، وتُضبط الورديات وفق الساعات التي تحتاجها، بما فيها المساء وعطلات نهاية الأسبوع.">Yes. Manila is four hours ahead of Dubai, and shifts are set around the hours you need, including evenings and weekends.</div></details>
+      <details><summary><span data-ar="كم يستغرق بدء المشروع التجريبي؟">How quickly can a pilot start?</span><span class="plus">+</span></summary><div class="body" data-ar="يتوقف ذلك على الأدوار والأحجام. يتضمن مقترحك موعد البدء وخطة التشغيل التدريجي بعد اكتمال تحديد النطاق.">It depends on the roles and volumes. Your proposal includes a start date and a ramp-up plan once scoping is done.</div></details>
     </div>
   </div>
 </section>
@@ -571,35 +627,41 @@ html.am-cursor-on select{cursor:pointer!important}
   <div class="wrap">
     <div class="enquiry">
       <div class="enq-copy">
-        <h2>Plan your pilot</h2>
-        <p>Tell us what you need. We'll reply within one working day to arrange a scoping call.</p>
+        <h2 data-ar="خطّط لمشروعك التجريبي">Plan your pilot</h2>
+        <p data-ar="أخبرنا بما تحتاجه. سنردّ خلال يوم عمل واحد لترتيب مكالمة تحديد النطاق.">Tell us what you need. We'll reply within one working day to arrange a scoping call.</p>
         <div class="enq-contacts">
-          <a href="https://wa.me/971527188093?text=Hi%20AMElleventh%2C%20I%27d%20like%20to%20plan%20a%20pilot."><svg class="i"><use href="#i-chat"/></svg><span><small>WhatsApp</small>+971 52 718 8093</span></a>
-          <a href="mailto:engage@amelleventh.com"><svg class="i"><use href="#i-mail"/></svg><span><small>Email</small>engage@amelleventh.com</span></a>
+          <a href="https://wa.me/971527188093?text=Hi%20AMElleventh%2C%20I%27d%20like%20to%20plan%20a%20pilot."><svg class="i"><use href="#i-chat"/></svg><span><small data-ar="واتساب">WhatsApp</small><bdi dir="ltr">+971 52 718 8093</bdi></span></a>
+          <a href="mailto:engage@amelleventh.com"><svg class="i"><use href="#i-mail"/></svg><span><small data-ar="البريد الإلكتروني">Email</small><bdi dir="ltr">engage@amelleventh.com</bdi></span></a>
         </div>
       </div>
       <form class="enq-form" id="enqForm" novalidate>
         <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <input type="hidden" name="_subject" value="New pilot enquiry from amelleventh.com">
         <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="language" id="enqLang" value="English">
         <div class="row2">
-          <label>Your name<input name="name" required autocomplete="name"></label>
-          <label>Company<input name="company" required autocomplete="organization"></label>
+          <label><span data-ar="اسمك">Your name</span><input name="name" required autocomplete="name"></label>
+          <label><span data-ar="الشركة">Company</span><input name="company" required autocomplete="organization"></label>
         </div>
         <div class="row2">
-          <label>Work email<input type="email" name="email" required autocomplete="email"></label>
-          <label><span>WhatsApp number <span class="opt">(optional)</span></span><input type="tel" name="whatsapp" autocomplete="tel"></label>
+          <label><span data-ar="البريد الإلكتروني للعمل">Work email</span><input type="email" name="email" required autocomplete="email" dir="ltr"></label>
+          <label><span data-ar="رقم واتساب <span class='opt'>(اختياري)</span>">WhatsApp number <span class="opt">(optional)</span></span><input type="tel" name="whatsapp" autocomplete="tel" dir="ltr"></label>
         </div>
         <div class="row2">
-          <label>Where is your business?<select name="location" required><option value="">Choose one</option><option>UAE</option><option>Saudi Arabia</option><option>Qatar</option><option>Kuwait</option><option>Bahrain</option><option>Oman</option><option>Other</option></select></label>
-          <label>What do you need?<select name="function" required><option value="">Choose one</option><option>Customer operations</option><option>Back office / finance</option><option>HR, payroll or recruitment</option><option>A mix of functions</option><option>Consultancy, IT or R&amp;D tax</option><option>Partnership</option></select></label>
+          <label><span data-ar="أين يقع نشاطك؟">Where is your business?</span><select name="location" required><option value="" data-ar="اختر">Choose one</option><option value="UAE" data-ar="الإمارات">UAE</option><option value="Saudi Arabia" data-ar="السعودية">Saudi Arabia</option><option value="Qatar" data-ar="قطر">Qatar</option><option value="Kuwait" data-ar="الكويت">Kuwait</option><option value="Bahrain" data-ar="البحرين">Bahrain</option><option value="Oman" data-ar="عُمان">Oman</option><option value="Other" data-ar="أخرى">Other</option></select></label>
+          <label><span data-ar="ماذا تحتاج؟">What do you need?</span><select name="function" required><option value="" data-ar="اختر">Choose one</option><option value="Customer operations" data-ar="عمليات خدمة العملاء">Customer operations</option><option value="Back office / finance" data-ar="الخدمات المساندة / المالية">Back office / finance</option><option value="HR, payroll or recruitment" data-ar="الموارد البشرية أو الرواتب أو التوظيف">HR, payroll or recruitment</option><option value="A mix of functions" data-ar="مزيج من الوظائف">A mix of functions</option><option value="Consultancy, IT or R&amp;D tax" data-ar="استشارات أو حلول تقنية أو ضريبة البحث والتطوير">Consultancy, IT or R&amp;D tax</option><option value="Partnership" data-ar="شراكة">Partnership</option></select></label>
         </div>
         <div class="row2">
-          <label>Approximate team size<select name="team_size" required><option value="">Choose one</option><option>Fewer than 30</option><option>30–50</option><option>50–100</option><option>More than 100</option><option>Not sure yet</option></select></label>
-          <label>Target start<select name="start" required><option value="">Choose one</option><option>As soon as possible</option><option>In 1–3 months</option><option>In 3–6 months</option><option>Just exploring</option></select></label>
+          <label><span data-ar="حجم الفريق التقريبي">Approximate team size</span><select name="team_size" required><option value="" data-ar="اختر">Choose one</option><option value="Fewer than 30" data-ar="أقل من 30">Fewer than 30</option><option value="30–50" data-ar="30–50">30–50</option><option value="50–100" data-ar="50–100">50–100</option><option value="More than 100" data-ar="أكثر من 100">More than 100</option><option value="Not sure yet" data-ar="لست متأكدًا بعد">Not sure yet</option></select></label>
+          <label><span data-ar="موعد البدء المستهدف">Target start</span><select name="start" required><option value="" data-ar="اختر">Choose one</option><option value="As soon as possible" data-ar="في أقرب وقت ممكن">As soon as possible</option><option value="In 1–3 months" data-ar="خلال 1–3 أشهر">In 1–3 months</option><option value="In 3–6 months" data-ar="خلال 3–6 أشهر">In 3–6 months</option><option value="Just exploring" data-ar="أستكشف فقط">Just exploring</option></select></label>
         </div>
-        <label><span>Anything else we should know? <span class="opt">(optional)</span></span><textarea name="message" rows="3"></textarea></label>
-        <button class="btn btn-primary" type="submit" id="enqBtn">Send enquiry <svg class="i" style="width:18px;height:18px"><use href="#i-arrow"/></svg></button>
+        <label><span data-ar="هل من شيء آخر نود معرفته؟ <span class='opt'>(اختياري)</span>">Anything else we should know? <span class="opt">(optional)</span></span><textarea name="message" rows="3"></textarea></label>
+        <div class="send-row">
+          <button class="btn btn-primary" type="submit" id="enqEmail"><svg class="i" style="width:18px;height:18px"><use href="#i-mail"/></svg><span data-ar="إرسال عبر البريد الإلكتروني">Send by email</span></button>
+          <button class="btn btn-wa" type="button" id="enqWa"><svg class="i" style="width:18px;height:18px"><use href="#i-chat"/></svg><span data-ar="إرسال عبر واتساب">Send on WhatsApp</span></button>
+        </div>
+        <p class="send-note" data-ar="كلا الخيارين يرسل البيانات نفسها. يفتح واتساب برسالتك جاهزة، فاضغط إرسال لتصل إلينا.">Both send the same details. WhatsApp opens with your message ready; tap send there to deliver it.</p>
         <p class="form-status" id="enqStatus" role="status" aria-live="polite"></p>
       </form>
     </div>
@@ -612,106 +674,112 @@ html.am-cursor-on select{cursor:pointer!important}
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a href="#top" class="logo" aria-label="AMElleventh home"><svg viewBox="0 0 108 150" aria-hidden="true" style="width:22px;height:30px"><g fill="url(#lg)"><rect width="108" height="6" rx="1.5"/><rect x="10" y="18" width="32" height="7" rx="1.5"/><path d="M16 25 L36 25 L34 108 L18 108 Z"/><rect x="6" y="113" width="40" height="8" rx="2"/><rect x="64" y="18" width="32" height="7" rx="1.5"/><path d="M70 25 L90 25 L88 108 L72 108 Z"/><rect x="60" y="113" width="40" height="8" rx="2"/><rect y="126" width="108" height="5" rx="1.5" opacity=".4"/></g></svg><span class="logo-word">AME<b>ll</b>eventh</span></a>
-        <p>Customer operations and back-office teams for UAE and GCC businesses, delivered in the Philippines and governed from Dubai.</p>
+        <a href="#top" class="logo" aria-label="AMElleventh home" data-ar-aria="AMElleventh، الصفحة الرئيسية"><svg viewBox="0 0 108 150" aria-hidden="true" style="width:26px;height:36px"><use href="#am-mark"/></svg><span class="logo-word" dir="ltr">AME<b>ll</b>eventh</span></a>
+        <p data-ar="فرق عمليات خدمة العملاء والخدمات المساندة لشركات الإمارات والخليج، تُنفَّذ في الفلبين وتُدار من دبي.">Customer operations and back-office teams for UAE and GCC businesses, delivered in the Philippines and governed from Dubai.</p>
         <div class="foot-contact">
-          <a href="https://wa.me/971527188093?text=Hi%20AMElleventh%2C%20I%27d%20like%20to%20know%20more."><svg class="i" style="width:17px;height:17px"><use href="#i-chat"/></svg>WhatsApp +971 52 718 8093</a>
-          <a href="mailto:engage@amelleventh.com"><svg class="i" style="width:17px;height:17px"><use href="#i-mail"/></svg>engage@amelleventh.com</a>
+          <a href="https://wa.me/971527188093?text=Hi%20AMElleventh%2C%20I%27d%20like%20to%20know%20more."><svg class="i" style="width:17px;height:17px"><use href="#i-chat"/></svg><span><span data-ar="واتساب">WhatsApp</span> <bdi dir="ltr">+971 52 718 8093</bdi></span></a>
+          <a href="mailto:engage@amelleventh.com"><svg class="i" style="width:17px;height:17px"><use href="#i-mail"/></svg><bdi dir="ltr">engage@amelleventh.com</bdi></a>
         </div>
       </div>
-      <div class="foot-col"><h4>Services</h4><ul>
-        <li><a href="#bpo">Outsourced teams (BPO)</a></li>
-        <li><button data-open="d-consult">Business consultancy</button></li>
-        <li><button data-open="d-it">IT solutions</button></li>
-        <li><button data-open="d-rd">R&amp;D tax advisory</button></li>
+      <div class="foot-col"><h4 data-ar="الخدمات">Services</h4><ul>
+        <li><a href="#bpo" data-ar="فرق العمل الخارجية (BPO)">Outsourced teams (BPO)</a></li>
+        <li><button data-open="d-consult" data-ar="الاستشارات التجارية">Business consultancy</button></li>
+        <li><button data-open="d-it" data-ar="الحلول التقنية">IT solutions</button></li>
+        <li><button data-open="d-rd" data-ar="الاستشارات الضريبية للبحث والتطوير">R&amp;D tax advisory</button></li>
       </ul></div>
-      <div class="foot-col"><h4>Company</h4><ul>
-        <li><a href="#story">Our founder</a></li>
-        <li><a href="#record">Track record</a></li>
-        <li><a href="#assurance">How we manage quality</a></li>
-        <li><button data-open="d-partners">Partner with us</button></li>
+      <div class="foot-col"><h4 data-ar="الشركة">Company</h4><ul>
+        <li><a href="#story" data-ar="مؤسسنا">Our founder</a></li>
+        <li><a href="#record" data-ar="سجلّ الإنجاز">Track record</a></li>
+        <li><a href="#assurance" data-ar="كيف ندير الجودة">How we manage quality</a></li>
+        <li><button data-open="d-partners" data-ar="كن شريكًا لنا">Partner with us</button></li>
       </ul></div>
-      <div class="foot-col"><h4>Get in touch</h4><ul>
-        <li><a href="#enquire">Plan a pilot</a></li>
-        <li><a href="#faq">Common questions</a></li>
-        <li><a href="mailto:engage@amelleventh.com">Email us</a></li>
+      <div class="foot-col"><h4 data-ar="تواصل معنا">Get in touch</h4><ul>
+        <li><a href="#enquire" data-ar="خطّط لمشروعك التجريبي">Plan a pilot</a></li>
+        <li><a href="#faq" data-ar="أسئلة شائعة">Common questions</a></li>
+        <li><a href="mailto:engage@amelleventh.com" data-ar="راسلنا عبر البريد">Email us</a></li>
       </ul></div>
     </div>
-    <div class="copy">© 2026 Amelleventh - FZCO. All rights reserved.</div>
+    <div class="copy" data-ar="© 2026 Amelleventh - FZCO. جميع الحقوق محفوظة.">© 2026 Amelleventh - FZCO. All rights reserved.</div>
   </div>
 </footer>
 
 <!-- DIALOGS -->
 
-
 <dialog id="d-consult" aria-labelledby="h2d"><div class="dlg">
-  <button class="dlg-x" aria-label="Close">×</button>
-  <h3 id="h2d">Business consultancy</h3>
-  <p>For companies entering the UAE or GCC, setting up a regulated business or getting ready for investors. Every engagement has a fixed scope agreed in writing.</p>
-  <h4>Indicative fees</h4>
+  <button class="dlg-x" aria-label="Close" data-ar-aria="إغلاق">×</button>
+  <h3 id="h2d" data-ar="الاستشارات التجارية">Business consultancy</h3>
+  <p data-ar="للشركات التي تدخل أسواق الإمارات أو الخليج، أو تؤسس نشاطًا خاضعًا للتنظيم، أو تستعد للمستثمرين. لكل مشروع نطاق ثابت يُتفق عليه كتابةً.">For companies entering the UAE or GCC, setting up a regulated business or getting ready for investors. Every engagement has a fixed scope agreed in writing.</p>
+  <h4 data-ar="الرسوم الاسترشادية">Indicative fees</h4>
   <div class="rows">
-    <div><span>Commercial structuring assessment</span><b>from AED 5,000</b></div>
-    <div><span>Market entry &amp; commercial blueprint</span><b>AED 25,000–75,000</b></div>
-    <div><span>Investor readiness programme</span><b>AED 15,000–50,000</b></div>
-    <div><span>Ongoing advisory retainer</span><b>AED 8,000–25,000 / mo</b></div>
+    <div><span data-ar="تقييم الهيكلة التجارية">Commercial structuring assessment</span><b data-ar="من 5,000 درهم">from AED 5,000</b></div>
+    <div><span data-ar="دخول السوق والمخطط التجاري">Market entry &amp; commercial blueprint</span><b data-ar="25,000–75,000 درهم">AED 25,000–75,000</b></div>
+    <div><span data-ar="برنامج الجاهزية للمستثمرين">Investor readiness programme</span><b data-ar="15,000–50,000 درهم">AED 15,000–50,000</b></div>
+    <div><span data-ar="عقد استشاري مستمر">Ongoing advisory retainer</span><b data-ar="8,000–25,000 درهم / شهريًا">AED 8,000–25,000 / mo</b></div>
   </div>
-  <p class="fine">These are guide ranges. Your final fee is confirmed in a signed proposal.</p>
-  <a href="#enquire" class="btn btn-primary" data-close>Ask about consultancy</a>
+  <p class="fine" data-ar="هذه نطاقات استرشادية. تُؤكَّد رسومك النهائية في مقترح موقّع.">These are guide ranges. Your final fee is confirmed in a signed proposal.</p>
+  <a href="#enquire" class="btn btn-primary" data-close data-ar="اسأل عن الاستشارات">Ask about consultancy</a>
 </div></dialog>
 
 <dialog id="d-it" aria-labelledby="h3d"><div class="dlg">
-  <button class="dlg-x" aria-label="Close">×</button>
-  <h3 id="h3d">IT solutions</h3>
-  <p>Technology projects managed from the UAE and delivered by vetted technology partners, with set implementation costs.</p>
-  <h4>What we deliver</h4>
-  <div class="chips"><span>Software implementation &amp; upgrades</span><span>Custom ERP &amp; CRM</span><span>Mobile &amp; web apps</span><span>Process automation</span><span>Reporting &amp; dashboards</span><span>1st to 3rd-line support</span><span>Cloud &amp; managed IT</span></div>
-  <a href="#enquire" class="btn btn-primary" data-close>Ask about IT projects</a>
+  <button class="dlg-x" aria-label="Close" data-ar-aria="إغلاق">×</button>
+  <h3 id="h3d" data-ar="الحلول التقنية">IT solutions</h3>
+  <p data-ar="مشاريع تقنية تُدار من الإمارات وتُنفَّذ بواسطة شركاء تقنيين معتمدين، بتكاليف تنفيذ محددة.">Technology projects managed from the UAE and delivered by vetted technology partners, with set implementation costs.</p>
+  <h4 data-ar="ما نقدّمه">What we deliver</h4>
+  <div class="chips"><span data-ar="تنفيذ البرمجيات وتحديثها">Software implementation &amp; upgrades</span><span data-ar="أنظمة ERP وCRM مخصصة">Custom ERP &amp; CRM</span><span data-ar="تطبيقات الجوال والويب">Mobile &amp; web apps</span><span data-ar="أتمتة العمليات">Process automation</span><span data-ar="التقارير ولوحات المعلومات">Reporting &amp; dashboards</span><span data-ar="دعم المستوى الأول إلى الثالث">1st to 3rd-line support</span><span data-ar="الحوسبة السحابية وخدمات تقنية المعلومات المُدارة">Cloud &amp; managed IT</span></div>
+  <a href="#enquire" class="btn btn-primary" data-close data-ar="اسأل عن المشاريع التقنية">Ask about IT projects</a>
 </div></dialog>
 
 <dialog id="d-rd" aria-labelledby="h4d"><div class="dlg">
-  <button class="dlg-x" aria-label="Close">×</button>
-  <h3 id="h4d">R&amp;D tax advisory</h3>
-  <p>The UAE's Corporate Tax framework includes an incentive for research and development, and claiming it depends on having the right records. We help businesses check whether they qualify and get those records ready.</p>
-  <h4>What we cover</h4>
-  <div class="chips"><span>Eligibility check</span><span>R&amp;D cost tracking</span><span>Documentation pack</span><span>Claim preparation support</span></div>
-  <p class="fine">We work alongside your tax advisors, with specialist tax partners where needed.</p>
-  <a href="#enquire" class="btn btn-primary" data-close>Check eligibility</a>
+  <button class="dlg-x" aria-label="Close" data-ar-aria="إغلاق">×</button>
+  <h3 id="h4d" data-ar="الاستشارات الضريبية للبحث والتطوير">R&amp;D tax advisory</h3>
+  <p data-ar="يتضمن نظام ضريبة الشركات في الإمارات حافزًا للبحث والتطوير، والاستفادة منه تعتمد على توفّر السجلات الصحيحة. نساعد الشركات على التحقق من أهليتها وتجهيز تلك السجلات.">The UAE's Corporate Tax framework includes an incentive for research and development, and claiming it depends on having the right records. We help businesses check whether they qualify and get those records ready.</p>
+  <h4 data-ar="ما نغطيه">What we cover</h4>
+  <div class="chips"><span data-ar="فحص الأهلية">Eligibility check</span><span data-ar="تتبّع تكاليف البحث والتطوير">R&amp;D cost tracking</span><span data-ar="ملف التوثيق">Documentation pack</span><span data-ar="دعم إعداد المطالبة">Claim preparation support</span></div>
+  <p class="fine" data-ar="نعمل جنبًا إلى جنب مع مستشاريك الضريبيين، ومع شركاء متخصصين في الضرائب عند الحاجة.">We work alongside your tax advisors, with specialist tax partners where needed.</p>
+  <a href="#enquire" class="btn btn-primary" data-close data-ar="تحقّق من الأهلية">Check eligibility</a>
 </div></dialog>
 
 <dialog id="d-model" aria-labelledby="h5d"><div class="dlg">
-  <button class="dlg-x" aria-label="Close">×</button>
-  <h3 id="h5d">Why it costs less</h3>
-  <p>Most outsourcing firms build their own floor and pass the cost on to you. We work differently.</p>
-  <h4>Who does what</h4>
+  <button class="dlg-x" aria-label="Close" data-ar-aria="إغلاق">×</button>
+  <h3 id="h5d" data-ar="لماذا تكلفتنا أقل">Why it costs less</h3>
+  <p data-ar="تبني معظم شركات الاستعانة بمصادر خارجية مراكز عمل خاصة بها وتحمّل تكلفتها عليك. أما نحن فنعمل بطريقة مختلفة.">Most outsourcing firms build their own floor and pass the cost on to you. We work differently.</p>
+  <h4 data-ar="من يقوم بماذا">Who does what</h4>
   <div class="rows">
-    <div><span>Sets the standard and the rate card</span><b>AMElleventh</b></div>
-    <div><span>Selects and manages the delivery partner</span><b>AMElleventh</b></div>
-    <div><span>Delivers to our service levels</span><b>BPO partner</b></div>
-    <div><span>One contract, one point of accountability</span><b>You</b></div>
+    <div><span data-ar="وضع المعيار وقائمة الأسعار">Sets the standard and the rate card</span><b>AMElleventh</b></div>
+    <div><span data-ar="اختيار شريك التنفيذ وإدارته">Selects and manages the delivery partner</span><b>AMElleventh</b></div>
+    <div><span data-ar="التنفيذ وفق مستويات الخدمة لدينا">Delivers to our service levels</span><b data-ar="شريك BPO">BPO partner</b></div>
+    <div><span data-ar="عقد واحد ونقطة مسؤولية واحدة">One contract, one point of accountability</span><b data-ar="أنت">You</b></div>
   </div>
-  <p class="fine">With no fixed floor costs to carry, we can price lower and grow with demand.</p>
-  <a href="#enquire" class="btn btn-primary" data-close>Plan a pilot</a>
+  <p class="fine" data-ar="ولأننا لا نتحمل تكاليف مراكز عمل ثابتة، نستطيع تسعير خدماتنا بأقل ونتوسع مع الطلب.">With no fixed floor costs to carry, we can price lower and grow with demand.</p>
+  <a href="#enquire" class="btn btn-primary" data-close data-ar="خطّط لمشروعك التجريبي">Plan a pilot</a>
 </div></dialog>
 
 <dialog id="d-partners" aria-labelledby="h6d"><div class="dlg">
-  <button class="dlg-x" aria-label="Close">×</button>
-  <h3 id="h6d">Partner with us</h3>
-  <h4>BPO companies</h4>
-  <p>Win UAE and GCC clients without setting up in the region. We bring the clients and manage the relationship, and you deliver to our rate card and service levels.</p>
-  <h4>Licensing agencies</h4>
-  <p>Refer newly licensed businesses that need staff and structure. We do the work and you earn a commission, with no delivery work for your team.</p>
-  <a href="mailto:engage@amelleventh.com?subject=Partnership%20enquiry" class="btn btn-primary">Discuss a partnership</a>
+  <button class="dlg-x" aria-label="Close" data-ar-aria="إغلاق">×</button>
+  <h3 id="h6d" data-ar="كن شريكًا لنا">Partner with us</h3>
+  <h4 data-ar="شركات BPO">BPO companies</h4>
+  <p data-ar="اكسب عملاء في الإمارات والخليج دون الحاجة إلى التأسيس في المنطقة. نحن نوفّر العملاء وندير العلاقة، وأنتم تنفّذون وفق قائمة أسعارنا ومستويات الخدمة.">Win UAE and GCC clients without setting up in the region. We bring the clients and manage the relationship, and you deliver to our rate card and service levels.</p>
+  <h4 data-ar="وكالات الترخيص">Licensing agencies</h4>
+  <p data-ar="أحِل إلينا الشركات حديثة الترخيص التي تحتاج إلى موظفين وهيكل تشغيلي. نقوم نحن بالعمل وتحصل أنت على عمولة، دون أي عمل تنفيذي على فريقك.">Refer newly licensed businesses that need staff and structure. We do the work and you earn a commission, with no delivery work for your team.</p>
+  <a href="mailto:engage@amelleventh.com?subject=Partnership%20enquiry" class="btn btn-primary" data-ar="ناقش الشراكة">Discuss a partnership</a>
 </div></dialog>
 
 
 
 <script>
-/* dialogs */
-document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>document.getElementById(b.dataset.open).showModal()));
-document.querySelectorAll('dialog').forEach(d=>{
-  d.addEventListener('click',e=>{if(e.target===d)d.close()});
-  d.querySelectorAll('.dlg-x,[data-close]').forEach(x=>x.addEventListener('click',()=>d.close()));
+const root=document.documentElement;
+const isAr=()=>root.lang==='ar';
+const tr=(en,ar)=>isAr()?ar:en;
+
+/* dialogs (delegated, so they keep working after the language swap rewrites text) */
+document.addEventListener('click',e=>{
+  const o=e.target.closest('[data-open]');
+  if(o){document.getElementById(o.dataset.open).showModal();return}
+  const c=e.target.closest('.dlg-x,[data-close]');
+  if(c){const d=c.closest('dialog');if(d)d.close()}
 });
+document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close()}));
+
 /* header + mobile menu */
 const hd=document.querySelector('header');addEventListener('scroll',()=>hd.classList.toggle('scrolled',scrollY>8),{passive:true});
 const mb=document.querySelector('.menu-btn'),mn=document.getElementById('mnav');
@@ -720,24 +788,86 @@ mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mn.classList
 
 /* live clocks */
 (function(){const f=tz=>new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:tz});const a=f('Asia/Dubai'),b=f('Asia/Manila');const t=()=>{const n=new Date();document.getElementById('t-dxb').textContent=a.format(n);document.getElementById('t-mnl').textContent=b.format(n)};t();setInterval(t,20000)})();
-/* enquiry form -> FormSubmit (activate once from engage@amelleventh.com) */
+
+/* language: English / Arabic (RTL) */
 (function(){
-  const f=document.getElementById('enqForm'),btn=document.getElementById('enqBtn'),st=document.getElementById('enqStatus');
-  const fallback='Email <a href="mailto:engage@amelleventh.com">engage@amelleventh.com</a> or message us on <a href="https://wa.me/971527188093?text=Hi%20AMElleventh%2C%20I%27d%20like%20to%20know%20more.">WhatsApp</a>.';
-  f.addEventListener('submit',async e=>{
-    e.preventDefault();st.className='form-status';st.textContent='';
-    let bad=null;f.querySelectorAll('[required]').forEach(el=>{const ok=el.checkValidity();el.classList.toggle('invalid',!ok);if(!ok&&!bad)bad=el});
-    if(bad){st.className='form-status err';st.textContent='Fill in the highlighted fields to send your enquiry.';bad.focus();return}
-    if(f._honey.value)return;
-    btn.disabled=true;btn.firstChild.nodeValue='Sending… ';
-    try{
-      const r=await fetch('https://formsubmit.co/ajax/engage@amelleventh.com',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)});
-      const j=await r.json().catch(()=>({}));
-      if(r.ok&&String(j.success)==='true'){f.reset();st.className='form-status ok';st.textContent='Enquiry sent. We\'ll reply within one working day.';btn.firstChild.nodeValue='Sent ';}
-      else throw new Error(j.message||'not sent');
-    }catch(err){st.className='form-status err';st.innerHTML='Your enquiry didn\'t send. '+fallback;btn.disabled=false;btn.firstChild.nodeValue='Send enquiry ';}
+  const nodes=[...document.querySelectorAll('[data-ar]')];
+  nodes.forEach(n=>{n._en=n.innerHTML});
+  const labels=[...document.querySelectorAll('[data-ar-aria]')];
+  labels.forEach(n=>{n._en=n.getAttribute('aria-label')});
+  const btn=document.getElementById('langBtn'),langField=document.getElementById('enqLang');
+  const metaDesc=document.querySelector('meta[name=description]');
+  const EN={title:document.title,desc:metaDesc.content};
+  const AR={title:'AMElleventh | فرق عمل في الفلبين، بإدارة من دبي',desc:'فرق عمليات خدمة العملاء والخدمات المساندة لشركات الإمارات والخليج، تُنفَّذ في الفلبين وتُدار من دبي. تبدأ المشاريع التجريبية من 30 مقعدًا.'};
+  function set(l,save){
+    const ar=l==='ar';
+    root.lang=l;root.dir=ar?'rtl':'ltr';
+    nodes.forEach(n=>{n.innerHTML=ar?n.dataset.ar:n._en});
+    labels.forEach(n=>n.setAttribute('aria-label',ar?n.dataset.arAria:n._en));
+    document.title=ar?AR.title:EN.title;metaDesc.content=ar?AR.desc:EN.desc;
+    btn.textContent=ar?'English':'العربية';btn.lang=ar?'en':'ar';btn.setAttribute('aria-label',ar?'Switch to English':'التبديل إلى العربية');
+    langField.value=ar?'Arabic':'English';
+    if(save){try{localStorage.setItem('am-lang',l)}catch(e){}}
+    const st=document.getElementById('enqStatus');if(st){st.textContent='';st.className='form-status'}
+  }
+  btn.addEventListener('click',()=>set(isAr()?'en':'ar',true));
+  let start='en';
+  try{const q=new URLSearchParams(location.search).get('lang');if(q==='ar'||q==='en')start=q;else{const s=localStorage.getItem('am-lang');if(s==='ar'||s==='en')start=s}}catch(e){}
+  if(start==='ar')set('ar',false);else{btn.textContent='العربية';btn.lang='ar'}
+})();
+
+/* enquiry form: send by email (FormSubmit) or open WhatsApp with the details ready */
+(function(){
+  const f=document.getElementById('enqForm'),bE=document.getElementById('enqEmail'),bW=document.getElementById('enqWa'),st=document.getElementById('enqStatus');
+  const MAIL='engage@amelleventh.com',WA='971527188093';
+  const status=(cls,html)=>{st.className='form-status '+cls;st.innerHTML=html};
+  const val=k=>((f.elements[k]&&f.elements[k].value)||'').trim();
+  function valid(){
+    let bad=null;
+    f.querySelectorAll('[required]').forEach(el=>{const ok=el.checkValidity()&&el.value.trim()!=='';el.classList.toggle('invalid',!ok);if(!ok&&!bad)bad=el});
+    if(bad){status('err',tr('Fill in the highlighted fields to send your enquiry.','يرجى تعبئة الحقول المظلّلة لإرسال استفسارك.'));bad.focus();return false}
+    return true;
+  }
+  function message(){
+    const L=[
+      'New pilot enquiry from amelleventh.com','',
+      'Name: '+val('name'),'Company: '+val('company'),'Work email: '+val('email'),
+      val('whatsapp')?'WhatsApp: '+val('whatsapp'):null,
+      'Business location: '+val('location'),'Needs: '+val('function'),'Team size: '+val('team_size'),'Target start: '+val('start'),
+      val('message')?'':null,val('message')?'Message: '+val('message'):null,
+      isAr()?'(Enquiry sent from the Arabic version of the site)':null
+    ];
+    return L.filter(x=>x!==null).join('\n');
+  }
+  const mailto=()=>'mailto:'+MAIL+'?subject='+encodeURIComponent('New pilot enquiry from amelleventh.com')+'&body='+encodeURIComponent(message());
+  const waUrl=()=>'https://wa.me/'+WA+'?text='+encodeURIComponent(message());
+  const busy=(on)=>{bE.disabled=on;bW.disabled=on};
+
+  /* WhatsApp: opens the chat with every field filled in; the visitor taps send */
+  bW.addEventListener('click',()=>{
+    if(!valid())return;
+    const w=window.open(waUrl(),'_blank','noopener');
+    if(w){status('ok',tr('WhatsApp is open with your enquiry. Tap send there and we\'ll reply within one working day.','تم فتح واتساب ومعه استفسارك. اضغط إرسال هناك وسنردّ عليك خلال يوم عمل واحد.'))}
+    else{status('warn',tr('Your browser blocked WhatsApp. <a href="'+waUrl()+'" target="_blank" rel="noopener">Open WhatsApp</a> to send it.','منع المتصفح فتح واتساب. <a href="'+waUrl()+'" target="_blank" rel="noopener">افتح واتساب</a> للإرسال.'))}
   });
-  f.querySelectorAll('[required]').forEach(el=>el.addEventListener('input',()=>el.classList.remove('invalid')));
+
+  /* Email: straight to engage@ via FormSubmit; falls back to the visitor's own mail app */
+  f.addEventListener('submit',async e=>{
+    e.preventDefault();status('','');
+    if(!valid())return;
+    if(f._honey.value)return;
+    busy(true);const label=bE.querySelector('span'),old=label.innerHTML;label.textContent=tr('Sending…','جارٍ الإرسال…');
+    const fallback=()=>{status('warn',tr('We couldn\'t send that automatically. <a href="'+mailto()+'">Open it in your email app</a>, or <a href="'+waUrl()+'" target="_blank" rel="noopener">send it on WhatsApp</a>.','تعذّر الإرسال تلقائيًا. <a href="'+mailto()+'">افتحه في تطبيق البريد</a>، أو <a href="'+waUrl()+'" target="_blank" rel="noopener">أرسله عبر واتساب</a>.'))};
+    try{
+      const r=await fetch('https://formsubmit.co/ajax/'+MAIL,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)});
+      const j=await r.json().catch(()=>({}));
+      if(r.ok&&String(j.success)==='true'&&!/activat/i.test(j.message||'')){
+        f.reset();document.getElementById('enqLang').value=isAr()?'Arabic':'English';status('ok',tr('Enquiry sent. We\'ll reply within one working day.','تم إرسال استفسارك. سنردّ عليك خلال يوم عمل واحد.'));
+      }else{fallback()}
+    }catch(err){fallback()}
+    label.innerHTML=old;busy(false);
+  });
+  f.querySelectorAll('[required]').forEach(el=>{el.addEventListener('input',()=>el.classList.remove('invalid'));el.addEventListener('change',()=>el.classList.remove('invalid'))});
 })();
 
 /* serif Pi cursor: mouse only; text fields keep the I-beam */
