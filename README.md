@@ -55,19 +55,33 @@ NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
 
 Use the **Public Key**, not a private key. Restart `npm run dev` after changing these values. Production builds must be rebuilt after any change because these values are included at build time.
 
-The form sends its named fields using [`emailjs.sendForm`](https://www.emailjs.com/docs/sdk/send-form/), following the [EmailJS React integration](https://www.emailjs.com/docs/examples/reactjs/). It retains validation, the hidden honeypot and sending/success/error messages. Without the three configuration values, it displays the existing email and WhatsApp contact options instead of claiming an enquiry was sent.
+The form sends its named fields using the [EmailJS form API](https://www.emailjs.com/docs/rest-api/send-form/), without requiring browser storage. It retains validation and sending/success/error messages. Requests time out after 20 seconds so the buttons do not stay disabled indefinitely. Without the three configuration values, it displays the existing email and WhatsApp contact options instead of claiming an enquiry was sent.
 
-No live delivery has been verified without your EmailJS credentials. Once configured, submit a test enquiry and confirm it arrives at `engage@amelleventh.com`, including all fields and the correct reply address.
+Once configured, submit a test enquiry and confirm it arrives at the **To Email** address in your EmailJS template, including all fields and the correct reply address.
 
-## Build and upload
+## Deploy on Vercel
+
+In your Vercel project, open **Settings → Environment Variables** and add these three variables using the corresponding values from your local `.env.local`:
+
+```text
+NEXT_PUBLIC_EMAILJS_SERVICE_ID
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+```
+
+Select **Production** for the live domain. Also select **Preview** if you want email available in preview deployments. Save the variables, then go to **Deployments → latest deployment → … → Redeploy** and select Production.
+
+The local `.env.local` file is ignored by Git, so pushing the repository does not upload its values to Vercel. Next.js embeds these public values during the build; changing them requires a new deployment. A browser refresh alone cannot update them. See [Vercel's environment-variable guide](https://vercel.com/docs/environment-variables).
+
+Use Vercel's **Next.js** framework preset and default output settings. The current `next.config.mjs` uses a normal Next.js build; it does not generate a new `out/` export. Any existing `out/` folder can be an older build and should not be uploaded for this Vercel deployment.
+
+To check the build locally:
 
 ```powershell
 npm run build
 ```
 
-Next.js exports the complete static site to `out/`. Upload the **contents of `out/`**, including `_next/`, to your hosting root. For Cloudflare Pages Direct Upload, upload `out/`. For a connected build, use `npm run build`, output directory `out`, and set the same three environment variables in the hosting project's build settings.
-
-The root `index.html` is retained as the original reference; it is not the migrated site's deployment entry point. Do not upload the project source folder or `.env.local`.
+The root `index.html` is retained as the original reference; the migrated page is `app/page.jsx`. Keep `.env.local` out of Git.
 
 ## Files
 

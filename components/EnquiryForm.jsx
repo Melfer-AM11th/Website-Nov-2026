@@ -1,7 +1,6 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
 import { useLanguage } from './Language';
 
 const subject = 'New pilot enquiry from amelleventh.com';
@@ -48,7 +47,7 @@ export default function EnquiryForm() {
       invalid.focus();
       return false;
     }
-    return !form.elements.namedItem('_honey').value;
+    return true;
   }
 
   function openWhatsApp() {
@@ -81,13 +80,26 @@ export default function EnquiryForm() {
 
     sending.current = true;
     setState('sending');
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 20000);
     try {
-      await emailjs.sendForm(serviceId, templateId, form, { publicKey });
+      const data = new FormData(form);
+      data.set('service_id', serviceId);
+      data.set('template_id', templateId);
+      data.set('user_id', publicKey);
+      // The SDK reads localStorage on import, which can block the form in restricted browsers.
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send-form', {
+        method: 'POST',
+        body: data,
+        signal: controller.signal,
+      });
+      if (!response.ok) throw new Error('EmailJS request failed');
       form.reset();
       setState('sent');
     } catch {
       setState('fallback');
     } finally {
+      window.clearTimeout(timeout);
       sending.current = false;
     }
   }
@@ -101,7 +113,6 @@ export default function EnquiryForm() {
   return (
     <form ref={formRef} className="enq-form" id="enqForm" noValidate onSubmit={sendEnquiry}
       onInput={clearInvalid} onChange={clearInvalid}>
-      <input type="text" name="_honey" className="hp" tabIndex="-1" autoComplete="off" aria-hidden="true" />
       <input type="hidden" name="language" id="enqLang" value={language === 'ar' ? 'Arabic' : 'English'} />
       <div className="row2">
         <label><span>{t('Your name', 'اسمك')}</span><input name="name" required autoComplete="name" /></label>
