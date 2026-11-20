@@ -1,8 +1,8 @@
 import './globals.css';
 import { LanguageProvider } from '../components/Language';
 
-const title = 'AMElleventh | Philippine teams, governed from Dubai';
-const description = 'Customer operations and back-office teams for UAE and GCC businesses, delivered in the Philippines and governed from Dubai. Pilots from 30 seats.';
+const title = 'AMElleventh | Outsourced teams for the GCC, governed from Dubai';
+const description = 'Customer operations, bank-product sales, collections and back-office teams for UAE, Saudi and GCC businesses, delivered from the Philippines, India or the Arab region and governed from Dubai. Pilots from 30 seats.';
 
 export const metadata = {
   metadataBase: new URL('https://amelleventh.com'),
@@ -20,7 +20,7 @@ export const metadata = {
     siteName: 'AMElleventh',
     url: '/',
     title,
-    description,
+    description: 'We are the eleventh: not a perfect 10, but beyond service quality. Customer operations, bank-product sales, collections and back-office teams for UAE, Saudi and GCC businesses, delivered from the Philippines, India or the Arab region and governed from Dubai.',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
@@ -48,7 +48,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;600&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }} />
       </head>
       <body><LanguageProvider>{children}</LanguageProvider></body>
