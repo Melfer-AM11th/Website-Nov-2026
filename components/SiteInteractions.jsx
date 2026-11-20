@@ -17,6 +17,12 @@ export default function SiteInteractions() {
         document.getElementById(openButton.dataset.open).showModal();
         return;
       }
+      const prefillButton = event.target.closest("[data-prefill]");
+      if (prefillButton) {
+        const service = document.getElementById("enqFn");
+        service.value = prefillButton.dataset.prefill;
+        service.dispatchEvent(new Event("change", { bubbles: true }));
+      }
       const closeButton = event.target.closest(".dlg-x,[data-close]");
       const dialog = closeButton?.closest("dialog");
       if (dialog) dialog.close();
@@ -64,14 +70,18 @@ export default function SiteInteractions() {
       });
     const dubaiFormatter = formatTime("Asia/Dubai");
     const manilaFormatter = formatTime("Asia/Manila");
+    const indiaFormatter = formatTime("Asia/Kolkata");
     const dubaiClock = document.getElementById("t-dxb");
     const manilaClock = document.getElementById("t-mnl");
+    const indiaClock = document.getElementById("t-ind");
     const previousDubaiTime = dubaiClock.textContent;
     const previousManilaTime = manilaClock.textContent;
+    const previousIndiaTime = indiaClock.textContent;
     const updateClocks = () => {
       const now = new Date();
       dubaiClock.textContent = dubaiFormatter.format(now);
       manilaClock.textContent = manilaFormatter.format(now);
+      indiaClock.textContent = indiaFormatter.format(now);
     };
     updateClocks();
     const clockInterval = window.setInterval(updateClocks, 20000);
@@ -79,9 +89,10 @@ export default function SiteInteractions() {
       window.clearInterval(clockInterval);
       dubaiClock.textContent = previousDubaiTime;
       manilaClock.textContent = previousManilaTime;
+      indiaClock.textContent = previousIndiaTime;
     });
 
-    // Keep the original serif Pi cursor, its trail and its mouse-only behavior.
+    // Show the crown cursor and its trail only on precision pointers.
     if (window.matchMedia("(hover:hover) and (pointer:fine)").matches) {
       const root = document.documentElement;
       const cursor = document.getElementById("am-cursor");
@@ -102,13 +113,13 @@ export default function SiteInteractions() {
       let trailX = -99;
       let trailY = -99;
       let frame = 0;
-      const position = (element, a, b) => {
-        element.style.transform = `translate(${a - 2}px,${b - 1}px)`;
+      const position = (element, a, b, hotspotX) => {
+        element.style.transform = `translate(${a - hotspotX}px,${b - 1}px)`;
       };
       const animateTrail = () => {
         trailX += (x - trailX) * 0.28;
         trailY += (y - trailY) * 0.28;
-        position(trail, trailX, trailY);
+        position(trail, trailX, trailY, 7);
         frame = Math.abs(x - trailX) + Math.abs(y - trailY) > 0.3
           ? window.requestAnimationFrame(animateTrail)
           : 0;
@@ -116,13 +127,13 @@ export default function SiteInteractions() {
       listen(window, "mousemove", (event) => {
         x = event.clientX;
         y = event.clientY;
-        position(cursor, x, y);
+        position(cursor, x, y, 11);
         root.classList.add("am-visible");
         if (!frame) frame = window.requestAnimationFrame(animateTrail);
       }, { passive: true });
       listen(document, "mouseover", (event) => {
-        cursor.classList.toggle("hover", !!event.target.closest("a,button,[data-open],summary,select"));
-        root.classList.toggle("am-text", !!event.target.closest("input:not([type=checkbox]):not([type=radio]):not([type=submit]),textarea"));
+        cursor.classList.toggle("hover", !!event.target.closest("a,button,[data-open],summary,select,[data-apply],input[type=file]"));
+        root.classList.toggle("am-text", !!event.target.closest("input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=file]),textarea"));
       });
       listen(document, "mouseleave", () => root.classList.remove("am-visible"));
       listen(document, "mouseenter", () => {

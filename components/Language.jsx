@@ -5,12 +5,12 @@ import { createContext, useContext, useEffect, useState } from 'react';
 const LanguageContext = createContext(null);
 const metadata = {
   en: {
-    title: 'AMElleventh | Philippine teams, governed from Dubai',
-    description: 'Customer operations and back-office teams for UAE and GCC businesses, delivered in the Philippines and governed from Dubai. Pilots from 30 seats.',
+    title: 'AMElleventh | Outsourced teams for the GCC, governed from Dubai',
+    description: 'Customer operations, bank-product sales, collections and back-office teams for UAE, Saudi and GCC businesses, delivered from the Philippines, India or the Arab region and governed from Dubai. Pilots from 30 seats.',
   },
   ar: {
-    title: 'AMElleventh | فرق عمل في الفلبين، بإدارة من دبي',
-    description: 'فرق عمليات خدمة العملاء والخدمات المساندة لشركات الإمارات والخليج، تُنفَّذ في الفلبين وتُدار من دبي. تبدأ المشاريع التجريبية من 30 مقعدًا.',
+    title: 'AMElleventh | فرق عمل خارجية لدول الخليج، بإدارة من دبي',
+    description: 'فرق خدمة العملاء والمبيعات والتحصيل والخدمات المساندة لشركات الإمارات والخليج، تُنفَّذ من الفلبين أو الهند أو المنطقة العربية وتُدار من دبي. تبدأ المشاريع التجريبية من 30 مقعدًا.',
   },
 };
 

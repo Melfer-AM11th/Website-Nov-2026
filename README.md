@@ -59,6 +59,12 @@ The form sends its named fields using the [EmailJS form API](https://www.emailjs
 
 Once configured, submit a test enquiry and confirm it arrives at the **To Email** address in your EmailJS template, including all fields and the correct reply address.
 
+The network registration form follows the v27 reference's recipient routing. Individual professionals go to `hr@amelleventh.com`. Referral agents, BPO companies, IT companies and accounting/tax firms go to `engage@amelleventh.com`. It posts multipart registration data and the selected document directly to the reference's FormSubmit endpoint for that recipient. Subjects use `[Candidate] Individual professional | Name` or `[Partner] Role | Name`.
+
+Each recipient must activate its FormSubmit form through the verification email sent to that inbox. Until activation, automatic delivery is incomplete. FormSubmit does not retain uploaded files while activation is pending. Its AJAX endpoint does not send applicant autoresponses. See [FormSubmit documentation](https://formsubmit.co/documentation) and [activation help](https://formsubmit.co/help).
+
+The reference's `api.amelleventh.com/lead` hostname currently has no DNS record, so the network form uses FormSubmit directly. On failure, it retains the fields and selected document and offers a prepared email to the appropriate recipient. The visitor must attach the document manually when using that email link.
+
 ## Deploy on Vercel
 
 In your Vercel project, open **Settings → Environment Variables** and add these three variables using the corresponding values from your local `.env.local`:
