@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState } from 'react';
+import { sendEmailForm } from '../lib/emailjs';
 import { useLanguage } from './Language';
 import PhoneField, { countryCode, fullPhone, phoneOk } from './PhoneField';
 
@@ -30,7 +31,7 @@ function enquiryLinks(form, language) {
   return {
     phone: whatsapp,
     type,
-    email: 'mailto:engage@amelleventh.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(message),
+    email: 'mailto:engage@amelleventh.com,client@amelleventh.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(message),
     whatsapp: 'https://wa.me/971527188093?text=' + encodeURIComponent(message),
   };
 }
@@ -84,14 +85,6 @@ export default function EnquiryForm() {
     const prepared = enquiryLinks(form, language);
     setLinks(prepared);
 
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-    if (!serviceId || !templateId || !publicKey) {
-      setState('fallback');
-      return;
-    }
-
     sending.current = true;
     setState('sending');
     const controller = new AbortController();
@@ -110,16 +103,7 @@ export default function EnquiryForm() {
         'Enquiry type: ' + prepared.type,
         'Preferred delivery hub: ' + (data.get('delivery_pref') || 'No preference: advise me'),
       ].filter(Boolean).join('\n'));
-      data.set('service_id', serviceId);
-      data.set('template_id', templateId);
-      data.set('user_id', publicKey);
-      // The SDK reads localStorage on import, which can block the form in restricted browsers.
-      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send-form', {
-        method: 'POST',
-        body: data,
-        signal: controller.signal,
-      });
-      if (!response.ok) throw new Error('EmailJS request failed');
+      await sendEmailForm(data, controller.signal);
       form.reset();
       codeTouched.current = false;
       setPartnership(false);

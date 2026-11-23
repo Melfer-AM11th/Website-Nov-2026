@@ -288,21 +288,7 @@ export default function Home() {
 </section>
 
 {/* JOIN OUR NETWORK */}
-<section id="network">
-  <div className="wrap">
-    <Translated as="div" className="kicker" ar="شبكة AMElleventh">The AMElleventh network</Translated>
-    <Translated as="h2" ar="انضم إلى شبكتنا">Join our network</Translated>
-    <Translated as="p" className="lead" ar="نبني فرقًا وشراكات لعملاء الإمارات والخليج، ونعمل مع من يشاركنا معيار «الحادي عشر». سجّل اهتمامك، وسنتواصل معك حين يناسب ملفّك أحد برامجنا أو عملائنا.">We build teams and partnerships for UAE and GCC clients, and we work with people who share the eleventh standard. Register your interest and we'll contact you when your profile fits one of our programmes or clients.</Translated>
-    <div className="net">
-      <div className="net-card"><div className="tile"><svg className="i"><use href="#i-user"></use></svg></div><Translated as="h3" ar="محترف مستقل">Individual professional</Translated><Translated as="p" ar="تبحث عن فرصة في المبيعات أو التحصيل أو خدمة العملاء أو الخدمات المساندة؟ أرسل بياناتك وسيرتك الذاتية.">Looking for opportunities in sales, collections, customer service or back office? Send your details and CV.</Translated><Translated as="button" type="button" className="btn btn-outline btn-sm" data-apply="Individual professional" ar="سجّل كمحترف">Join as a professional</Translated></div>
-      <div className="net-card"><div className="tile"><svg className="i"><use href="#i-refer"></use></svg></div><Translated as="h3" ar="وكيل إحالة">Referral agent</Translated><Translated as="p" ar="تعرف شركات تحتاج إلى فرق عمل؟ أحِلها إلينا واكسب عمولة وفق شروط مكتوبة.">Know businesses that need a team? Refer them to us and earn a commission on written terms.</Translated><Translated as="button" type="button" className="btn btn-outline btn-sm" data-apply="Referral agent" ar="انضم كوكيل إحالة">Join as a referrer</Translated></div>
-      <div className="net-card"><div className="tile"><svg className="i"><use href="#i-headset"></use></svg></div><Translated as="h3" ar="شركة BPO">BPO company</Translated><Translated as="p" ar="شركة تنفيذ في الفلبين أو الهند أو دولة عربية وتريد عملاء في الإمارات والخليج دون التأسيس هناك.">A delivery company in the Philippines, India or an Arab country that wants UAE and GCC clients without setting up there.</Translated><Translated as="button" type="button" className="btn btn-outline btn-sm" data-apply="BPO company" ar="انضم كشريك BPO">Join as a BPO partner</Translated></div>
-      <div className="net-card"><div className="tile"><svg className="i"><use href="#i-code"></use></svg></div><Translated as="h3" ar="شركة تقنية معلومات">IT company</Translated><Translated as="p" ar="شركة برمجيات أو خدمات تقنية مُدارة تريد تنفيذ مشاريع عملائنا أو الإحالة المتبادلة.">A software or managed-IT firm that wants to deliver our clients' projects or exchange referrals.</Translated><Translated as="button" type="button" className="btn btn-outline btn-sm" data-apply="IT company" ar="انضم كشريك تقني">Join as an IT partner</Translated></div>
-      <div className="net-card"><div className="tile"><svg className="i"><use href="#i-calc"></use></svg></div><Translated as="h3" ar="شركة محاسبة وضرائب">Accounting &amp; tax firm</Translated><Translated as="p" ar="مكتب محاسبة أو ضرائب يخدم عملاءنا في الامتثال والتقارير والبحث والتطوير.">An accounting or tax practice serving our clients on compliance, reporting and R&amp;D.</Translated><Translated as="button" type="button" className="btn btn-outline btn-sm" data-apply="Accounting &amp; tax firm" ar="انضم كشريك محاسبي">Join as a finance partner</Translated></div>
-    </div>
-    <div className="note-bar net-note"><svg className="i"><use href="#i-people"></use></svg><Translated as="p" ar="يراجع فريقنا كل تسجيل. الأفراد يصلون إلى الموارد البشرية على hr@amelleventh.com، والشركات ووكلاء الإحالة إلى فريق الشراكات على engage@amelleventh.com. لا نفرض أي رسوم على المسجّلين.">Our team reviews every registration. Individuals go to HR at hr@amelleventh.com; companies and referral agents go to our partnerships team at engage@amelleventh.com. We never charge anyone to join.</Translated></div>
-  </div>
-</section>
+<NetworkForm />
 
 {/* FAQ */}
 <section className="alt" id="faq">
@@ -335,7 +321,7 @@ export default function Home() {
         </ol>
         <div className="enq-contacts">
           <a href="https://wa.me/971527188093?text=Hi%20AMElleventh%2C%20I%27d%20like%20to%20plan%20a%20pilot."><svg className="i"><use href="#i-chat"></use></svg><span><Translated as="small" ar="واتساب">WhatsApp</Translated><bdi dir="ltr">+971 52 718 8093</bdi></span></a>
-          <a href="mailto:engage@amelleventh.com"><svg className="i"><use href="#i-mail"></use></svg><span><Translated as="small" ar="البريد الإلكتروني">Email</Translated><bdi dir="ltr">engage@amelleventh.com</bdi></span></a>
+          <a href="mailto:engage@amelleventh.com,client@amelleventh.com"><svg className="i"><use href="#i-mail"></use></svg><span><Translated as="small" ar="البريد الإلكتروني">Email</Translated><bdi dir="ltr">engage@amelleventh.com</bdi></span></a>
         </div>
       </div>
       <EnquiryForm />
@@ -442,12 +428,7 @@ export default function Home() {
   <Translated as="a" href="#enquire" className="btn btn-primary" data-close="" data-prefill="Partnership" ar="ناقش الشراكة">Discuss a partnership</Translated>
 </div></dialog>
 
-<dialog id="d-apply" aria-labelledby="h7d"><div className="dlg">
-  <Translated as="button" className="dlg-x" aria-label="Close" ariaAr="إغلاق">×</Translated>
-  <Translated as="h3" id="h7d" ar="انضم إلى شبكة AMElleventh">Join the AMElleventh network</Translated>
-  <Translated as="p" ar="سجّل اهتمامك. سنتواصل معك حين يناسب ملفّك أحد برامجنا.">Register your interest. We will contact you when your profile fits one of our programmes.</Translated>
-  <NetworkForm />
-</div></dialog>
+
 
 
 

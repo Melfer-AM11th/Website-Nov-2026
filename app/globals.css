@@ -253,7 +253,9 @@ footer{border-top:1px solid var(--line);background:var(--soft);padding:60px 0 30
 
 dialog{margin:auto;border:0;padding:0;border-radius:18px;width:min(640px,100% - 28px);max-height:90vh;box-shadow:0 40px 80px -24px rgba(15,27,45,.45)}
 dialog::backdrop{background:rgba(15,27,45,.5);backdrop-filter:blur(4px)}
-dialog[open]{animation:pop .25s ease-out}
+dialog[open]{animation:modal-fade .25s ease-out}
+dialog[open] > .dlg{animation:pop .25s ease-out}
+@keyframes modal-fade{from{opacity:0}}
 @keyframes pop{from{opacity:0;transform:translateY(14px)}}
 .dlg{padding:34px;overflow:auto;max-height:90vh;position:relative}
 .dlg-x{position:absolute;top:14px;inset-inline-end:14px;width:40px;height:40px;border-radius:10px;border:0;background:var(--soft);cursor:pointer;font-size:1.3rem;color:var(--ink);z-index:2}

@@ -140,26 +140,35 @@ export default function SiteInteractions() {
         if (x > -99) root.classList.add("am-visible");
       });
 
-      // A modal is in the browser's top layer; the cursor must move into it.
-      let openDialogs = dialogs.filter((dialog) => dialog.open);
-      const moveCursor = () => {
+      // Track the live modal nodes: React updates can replace a dialog after
+      // this effect mounts. Its cursor must remain in the browser's top layer.
+      let openDialogs = [];
+      const moveCursor = (mutations = []) => {
+        openDialogs = openDialogs.filter((dialog) => dialog.isConnected && dialog.open);
+        for (const mutation of mutations) {
+          if (mutation.type === "attributes" && mutation.target.isConnected && mutation.target.matches("dialog[open]")) {
+            openDialogs = openDialogs.filter((dialog) => dialog !== mutation.target);
+            openDialogs.push(mutation.target);
+          }
+        }
+        for (const dialog of document.querySelectorAll("dialog[open]")) {
+          if (!openDialogs.includes(dialog)) openDialogs.push(dialog);
+        }
         const host = openDialogs.at(-1) || document.body;
         if (cursor.parentNode !== host) host.appendChild(cursor);
         if (trail.parentNode !== host) host.appendChild(trail);
       };
-      const observers = dialogs.map((dialog) => {
-        const observer = new MutationObserver(() => {
-          openDialogs = openDialogs.filter((openDialog) => openDialog.open);
-          if (dialog.open && !openDialogs.includes(dialog)) openDialogs.push(dialog);
-          moveCursor();
-        });
-        observer.observe(dialog, { attributes: true, attributeFilter: ["open"] });
-        return observer;
+      const observer = new MutationObserver(moveCursor);
+      observer.observe(document.body, {
+        attributes: true,
+        attributeFilter: ["open"],
+        childList: true,
+        subtree: true,
       });
       moveCursor();
 
       cleanups.push(() => {
-        observers.forEach((observer) => observer.disconnect());
+        observer.disconnect();
         if (frame) window.cancelAnimationFrame(frame);
         cursorClasses.forEach((name, index) => root.classList.toggle(name, previousClasses[index]));
         cursor.classList.toggle("hover", wasHovering);
