@@ -19,8 +19,9 @@ Open the local URL shown in the terminal, normally `http://localhost:3000`.
 ## Connect EmailJS
 
 1. Create an [EmailJS account](https://dashboard.emailjs.com/) and connect an email service under **Email Services**. Copy its Service ID.
-2. Create an email template with these settings:
-   - **To Email:** `itsupport.am11th@gmail.com`
+2. Edit the existing pilot enquiry template (or create one for a new setup) with these settings:
+   - **To Email:** `{{to_email}}`
+   - **Cc:** `engage@amelleventh.com`
    - **From Name:** `{{name}}`
    - **From Email:** keep **Use Default Email Address** checked
    - **Reply To:** `{{email}}`
@@ -55,9 +56,13 @@ NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
 
 Use the **Public Key**, not a private key. Restart `npm run dev` after changing these values. Production builds must be rebuilt after any change because these values are included at build time.
 
+One template handles all seven service choices. The website supplies `to_email` as `client@amelleventh.com` for Customer operations, Sales & collections teams, Back office / finance, HR, payroll or recruitment, A mix of functions, and Consultancy, IT or R&D tax. For Partnership (BPO or agency), it supplies `partner@amelleventh.com`. Every enquiry copies `engage@amelleventh.com`; the fallback email link uses the same To and Cc routing.
+
+For an existing setup, keep the same Template ID, Service ID, Public Key, template content, and Reply To. Apply the EmailJS To/Cc settings above and deploy the updated website together: the dynamic recipient requires the website to send `to_email`, so changing the EmailJS template alone is insufficient.
+
 The form sends its named fields using the [EmailJS form API](https://www.emailjs.com/docs/rest-api/send-form/), without requiring browser storage. It retains validation and sending/success/error messages. Requests time out after 20 seconds so the buttons do not stay disabled indefinitely. Without the three configuration values, it displays the existing email and WhatsApp contact options instead of claiming an enquiry was sent.
 
-Once configured, submit a test enquiry and confirm it arrives at the **To Email** address in your EmailJS template, including all fields and the correct reply address.
+Once configured and deployed, test an ordinary service and Partnership (BPO or agency). Confirm they arrive at `client@amelleventh.com` and `partner@amelleventh.com`, respectively, with `engage@amelleventh.com` copied in both cases, all form fields, and the correct reply address. Also check the fallback email link for both selections: the email draft must use the same To/Cc addresses.
 
 The network registration form follows the v27 reference's recipient routing. Individual professionals go to `hr@amelleventh.com`. Referral agents, BPO companies, IT companies and accounting/tax firms go to `engage@amelleventh.com`. It posts multipart registration data and the selected document directly to the reference's FormSubmit endpoint for that recipient. Subjects use `[Candidate] Individual professional | Name` or `[Partner] Role | Name`.
 
