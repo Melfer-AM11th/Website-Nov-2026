@@ -11,6 +11,7 @@ function enquiryLinks(form, language) {
   const value = (name) => form.elements.namedItem(name).value.trim();
   const whatsapp = fullPhone(value('wa_code'), value('wa_number'));
   const type = value('function') === 'Partnership' ? 'Partner' : 'Client';
+  const toEmail = type === 'Partner' ? 'partner@amelleventh.com' : 'client@amelleventh.com';
   const message = [
     subject, '',
     'Type: ' + type,
@@ -31,7 +32,8 @@ function enquiryLinks(form, language) {
   return {
     phone: whatsapp,
     type,
-    email: 'mailto:engage@amelleventh.com,client@amelleventh.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(message),
+    toEmail,
+    email: 'mailto:' + toEmail + '?cc=engage%40amelleventh.com&subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(message),
     whatsapp: 'https://wa.me/971527188093?text=' + encodeURIComponent(message),
   };
 }
@@ -91,6 +93,7 @@ export default function EnquiryForm() {
     const timeout = window.setTimeout(() => controller.abort(), 20000);
     try {
       const data = new FormData(form);
+      data.set('to_email', prepared.toEmail);
       data.set('whatsapp', prepared.phone);
       data.set('type', prepared.type);
       data.set('form_type', 'pilot');
